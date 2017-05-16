@@ -71,6 +71,15 @@ rails db:create
 				Building the mock up
 				Install node
 				Install webpack
+				
+				
+```apple js
+				npm install --save-dev babel-loader babel-core babel-preset-env babel-preset-react webpack
+				npm install --save-dev babel-cli babel-preset-react
+				echo '{ "presets": ["react"] }' > .babelrc
+
+                webpack -w -d
+```
 				Post form markup
 				Posts List
 				Hooking the Post Form

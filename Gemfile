@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'react-rails'
+gem 'rails-ujs'
 gem 'jquery-rails'
 
 group :development, :test do
