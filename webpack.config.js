@@ -3,22 +3,27 @@ const webpack = require('webpack');
 
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: "inline-sourcemap",
+  resolve: { 
+    extensions: [ '.js', '.jsx' ] 
+  },
   entry: [
-    './app/assets/javascripts/components/main.jsx',
+    './app/assets/javascripts/components/main',
   ],
   output: {
     path: path.resolve(__dirname, './app/assets/javascripts'),
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: [/\.js?$/, /\.jsx?$/],
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['es2015', 'react']
+        test: /\.jsx$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'es2015']
+          }
         }
       }
     ]

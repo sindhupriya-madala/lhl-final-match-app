@@ -1,36 +1,11 @@
 {
   "name": "match-app",
-  "private": true,
-  "dependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "body-parser": "^1.17.1",
-    "cookie-parser": "^1.4.3",
-    "dotenv": "^4.0.0",
-    "express": "^4.15.2",
-    "knex": "^0.13.0",
-    "moment": "^2.18.1",
-    "pg": "^6.1.5",
-    "random-name": "^0.1.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
-  },
-  "description": "Match App is for making your outsourcing job easier to be able to find out proper service and post request, make an appointment, make a deal,.etc.",
+  "description": " is for making your outsourcing job easier to be able to find out proper service and post request, make an appointment, make a deal,.etc.",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": "Sean Park",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:build": "node_modules/.bin/webpack --config ./client/webpack.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/laughnpeas/lhl-final-match-app.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/laughnpeas/lhl-final-match-app/issues"
-  },
-  "homepage": "https://github.com/laughnpeas/lhl-final-match-app#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
@@ -44,8 +19,18 @@
     "random-sentence": "^1.0.4",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "webpack": "^2.4.1",
+    "webpack": "^2.5.1",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.0"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.4.0",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "moment": "^2.18.1",
+    "random-name": "^0.1.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   }
 }
