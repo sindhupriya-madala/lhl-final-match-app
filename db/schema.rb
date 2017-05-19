@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519185521) do
+ActiveRecord::Schema.define(version: 20170519200257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "sender_user_id"
+    t.bigint "receiver_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_user_id"], name: "index_messages_on_receiver_user_id"
+    t.index ["sender_user_id"], name: "index_messages_on_sender_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "service_id"
+    t.string "description"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_reviews_on_service_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "category_id"
+    t.string "description"
+    t.integer "hourly_rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_services_on_category_id"
+    t.index ["user_id"], name: "index_services_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -25,4 +63,6 @@ ActiveRecord::Schema.define(version: 20170519185521) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "reviews", "services"
+  add_foreign_key "reviews", "users"
 end
