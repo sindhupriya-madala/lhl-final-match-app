@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: matchApp_development
+  database: project_dev
   username: development
   password: development
 

@@ -90,3 +90,10 @@ rails db:create
 				Using the A PA with React Directives
 				Adding time and Gravatar
 
+```
+
+psql -U development
+password  development
+createdb project_dev
+rails g model user first_name last_name email password_digest profile_pic
+```
