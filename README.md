@@ -92,8 +92,27 @@ rails db:create
 
 ```
 
-psql -U development
-password  development
 createdb project_dev
+createuser development -s
+psql
+\password  development
 rails g model user first_name last_name email password_digest profile_pic
+rails g model category name
+rails g model service user:references category:references description hourly_rate:integer
+rails g model review user:references service:references description rating:integer
+
+```
+# for message model just run 1st line in command line next in model file.
+```
+rails g model message content:text
+t.references :sender_user
+t.references :receiver_user
+```
+
+# Start Postgresql
+```
+brew services start postgresql
+
+brew services stop postgresql
+
 ```
