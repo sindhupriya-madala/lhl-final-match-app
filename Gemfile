@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'react-rails'
 gem 'rails-ujs'
+gem 'react-rails-img'
 gem 'jquery-rails'
 
 group :development, :test do
