@@ -13,6 +13,7 @@
   </head>
     <%= react_component 'Nav' %>
   <body>
+<<<<<<< HEAD
     <div class="right">
     <% if user_signed_in? %>
       Welcome <%= current_user.email %>
@@ -27,5 +28,10 @@
     <p class="alert"><%= alert %></p>
   </div>
     <%= yield %>
+=======
+    <%= react_component 'Main',
+    img_src: '/images/home-banner-clean.png' %>
+    
+>>>>>>> template/about
   </body>
 </html>
