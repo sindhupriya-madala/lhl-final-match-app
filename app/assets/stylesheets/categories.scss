@@ -1,3 +1,38 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'partials/variables';
+
+#category-container {
+	min-height: 100vw;
+	padding: 0em;
+	background-color: $lightblue;
+	border-width: 2em;
+	
+
+	.card {
+		padding: 1em;
+		margin: .3em;
+		background-color: $lightblue;
+		border-style: solid;
+		border-color: $blue;
+		&:hover {
+			background-color: $blue; 
+			color: $white;
+		}
+
+		.card-content {
+			padding: 0em;
+
+			.card-title {
+				color: $black;
+				margin-bottom: 0em;
+			}
+
+		}
+
+	}
+
+//------------------------------------- Close #category-container --------------------
+}
