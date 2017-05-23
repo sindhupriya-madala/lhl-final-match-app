@@ -3,16 +3,16 @@ class AllReviews extends React.Component{
   //   super(props);
   // }
   render(){
-    const reviews = this.props.reviews.map((review) => {
+    /*const reviews = this.props.reviews.map((review) => {
       return (
         <div className="col s4">
           <DisplayReviewCard review={review}/>
         </div>
       )
-    });
+    });*/
     return(
         <div>
-          {reviews}
+          {/*{reviews}*/}
           <div className="col s4">
             <DisplayReviewCard />
           </div>
