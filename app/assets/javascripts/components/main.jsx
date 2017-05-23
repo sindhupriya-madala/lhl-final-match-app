@@ -1,7 +1,7 @@
 class Main extends React.Component{
     render(){
         return(
-            <Register />
+            <h1>Index</h1>
         )
     }
 }
