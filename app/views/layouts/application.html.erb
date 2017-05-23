@@ -13,6 +13,19 @@
   </head>
     <%= react_component 'Nav' %>
   <body>
-    <%= react_component 'Main' %>
+    <div class="right">
+    <% if user_signed_in? %>
+      Welcome <%= current_user.email %>
+      <%= link_to "logout", destroy_user_session_path, method: 'DELETE' %>
+    <% else %>
+      Please 
+      <%= link_to "login", new_user_session_path %> 
+      or 
+      <%= link_to "signup", new_user_registration_path %>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+    <%= yield %>
   </body>
 </html>

@@ -10,5 +10,6 @@ const Nav = (props) => {
       </ul>
     </div>
   </nav>
+<NavBar />
   )
 }

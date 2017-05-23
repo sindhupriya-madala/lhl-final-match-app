@@ -17,7 +17,10 @@ gem 'react-rails'
 gem 'rails-ujs'
 gem 'react-rails-img'
 gem 'jquery-rails'
-
+gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'draper'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
