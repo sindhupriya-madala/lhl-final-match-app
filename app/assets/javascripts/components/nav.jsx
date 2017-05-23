@@ -1,8 +1,8 @@
 const Nav = (props) => {
   return(
   <nav>
-    <div className="nav-wrapper teal lighten-2 ">
-      <a href="#" className="brand-logo">BuyHands</a>
+    <div className="nav-wrapper blue darken-2 ">
+      <a href="#" className="brand-logo">Expert</a>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li><a href='#'>Category</a></li>
         <li><a href='#'>Settings</a></li>
