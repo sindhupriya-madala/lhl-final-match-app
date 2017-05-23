@@ -3,13 +3,9 @@ class Services extends React.Component{
     super(props);
 		this.state = {
 			service : this.props.service,
-			reviews : this.props.reviews
+			reviews : 'hello'//this.props.reviews
 		}
-    this.newMessage =  this.newMessage.bind(this);
-  };
-
-	newMessage(newmessage) {
-    
+    this.newReview =  this.newReview.bind(this);
   };
 
 	newReview(newreview) {
@@ -25,7 +21,7 @@ class Services extends React.Component{
 					<div className="col s12 m6"><ServiceCard service={this.state.service}/></div>
 					<div className="col s12 m6"><ReviewMessageCard /></div>
 				</div>
-					<div className="row"><AllReviews reviews={this.state.reviews}/></div>
+					<div className="row"><AllReviews reviews={this.state.reviews} /></div>
 			</div> 
     )
   }
