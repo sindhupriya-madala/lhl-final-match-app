@@ -14,5 +14,8 @@
 //= require react_ujs
 //= require components
 //= require jquery
+//= require jquery_ujs
+//= require_self
 //= require react_rails_img
 //= require_tree .
+
