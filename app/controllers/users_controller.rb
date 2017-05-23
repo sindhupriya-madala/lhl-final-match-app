@@ -12,9 +12,8 @@ class UserController < ApplicationController
       redirect_to '/signup'
     end
   end
-  
-  private
 
+  private
   def user_params
     params.require(:user).permit(
       :first_name, 
@@ -25,5 +24,4 @@ class UserController < ApplicationController
       :profile_pic
       )
   end
-
 end
