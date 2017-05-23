@@ -123,6 +123,8 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
+    react-rails-img (0.1.6)
+      react-rails
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -190,6 +192,7 @@ DEPENDENCIES
   rails (~> 5.1.1)
   rails-ujs
   react-rails
+  react-rails-img
   rspec-rails
   sass-rails (~> 5.0)
   spring

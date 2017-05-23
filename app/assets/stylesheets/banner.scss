@@ -1,0 +1,11 @@
+@import 'partials/variables';
+
+#banner-container {
+
+  .carousel {
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+  }
+
+}

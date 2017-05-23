@@ -2,14 +2,16 @@ const Services = (props) => {
   return(
 		<div id='services-container' className='row grey lighten-3'>
 
-			<div className='services-column col l3'>			
+			<div className='services-column col l3 hoverable'>			
 				<div className='card horizontal sticky-action'>
 					<div className='card-image'>
 						<img className='card activator'/>
 						<span className = 'card-name activator'> Services Name 1 </span>
-					<div className='card-action'>
-						<a className='btn-floating pulse right fab waves-effect waves-light red z-depth-5'><i className='material-icons'>add</i></a>
-					</div>
+						<div className='card-action'>
+							<button className="btn waves-effect waves-light" type="submit" name="action">Details
+								<i className="material-icons right">send</i>
+							</button>
+						</div>
 					</div>
 
 					<div className='card-stacked'>
@@ -17,10 +19,6 @@ const Services = (props) => {
 							<p className='card-title'> Name 1 </p>
 							<span className='card-details'> Information about the expert </span>
 						</div>
-						{/*<div className='card-action'>
-							<a className='btn-floating right fab waves-effect waves-light red z-depth-5'><i className='material-icons'>add</i></a>
-							<a href='#'>Details</a>
-						</div>*/}
 					</div>
 
 					<div className='card-reveal'>

@@ -1,0 +1,99 @@
+/* line 7, /vagrant/lhl-final/app/assets/stylesheets/categories.scss */
+#category-container {
+  min-height: 100vw;
+  padding: 0em;
+  background-color: #e6f3ff;
+  border-width: 2em;
+}
+/* line 14, /vagrant/lhl-final/app/assets/stylesheets/categories.scss */
+#category-container .card {
+  padding: 1em;
+  margin: .3em;
+  background-color: #e6f3ff;
+  border-style: solid;
+  border-color: #0353A4;
+}
+/* line 20, /vagrant/lhl-final/app/assets/stylesheets/categories.scss */
+#category-container .card:hover {
+  background-color: #0353A4;
+  color: #f7f8f9;
+}
+/* line 25, /vagrant/lhl-final/app/assets/stylesheets/categories.scss */
+#category-container .card .card-content {
+  padding: 0em;
+}
+/* line 28, /vagrant/lhl-final/app/assets/stylesheets/categories.scss */
+#category-container .card .card-content .card-title {
+  color: #222323;
+  margin-bottom: 0em;
+}
+/* line 8, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+/* line 12, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .card {
+  min-height: 15em;
+  background-color: #e6f3ff;
+}
+/* line 16, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column {
+  margin: 1em 0em 0em 1.9em;
+  min-width: 30%;
+  background-color: #0353A4;
+}
+/* line 21, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column img {
+  min-height: 8em;
+}
+/* line 28, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column .card-stacked .card-content {
+  padding: .6em;
+}
+/* line 31, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column .card-stacked .card-content .card-title {
+  color: #222323;
+}
+/* line 34, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column .card-stacked .card-content .card-details {
+  color: #222323;
+  font-size: .8em;
+}
+/* line 43, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column .card-reveal {
+  background-color: #0353A4;
+}
+/* line 45, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column .card-reveal .card-title {
+  color: #f7f8f9;
+}
+/* line 48, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column .card-reveal p {
+  font-size: 1em;
+}
+/* line 51, /vagrant/lhl-final/app/assets/stylesheets/services.scss */
+#services-container .services-column .card-reveal .material-icons {
+  color: #f7f8f9;
+  font-size: 1em;
+}
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+
+
+*/
+
+
+@import 'categories';
+
+

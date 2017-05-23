@@ -9,19 +9,25 @@
   max-height: 100vh;
   overflow-y: scroll;
   
-  .card {
-    min-height: 15em;
-    background-color: $lightblue;
-  }
   .services-column{
     margin: 1em 0em 0em 1.9em;
     min-width: 30%;
     background-color: $blue;
+  
+    .card {
+      min-height: 15em;
+      background-color: $lightblue;
 
-    img {
-      min-height: 8em;
+      img {
+        min-height: 8em;
+      }
+
+      .card-action {
+        padding: 0;
+        position: absolute;
+      }
+
     }
-
     .card-stacked {
       
 
@@ -49,6 +55,7 @@
         font-size: 1em;
       }
       .material-icons {
+        padding: 0;
         color: $white;
         font-size: 1em;
       }
