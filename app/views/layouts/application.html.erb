@@ -10,8 +10,8 @@
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js'%>
   </head>
-    <%= react_component 'Nav' %>
+    <%= react_component 'Nav', current_user %>
   <body>
-    <%= react_component 'Main' %>
+    <%= react_component 'Services', img_src: '/images/sample1.jpg' %>
   </body>
 </html>

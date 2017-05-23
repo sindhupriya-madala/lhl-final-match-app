@@ -1,4 +1,5 @@
 const Nav = (props) => {
+
   return(
   <nav>
     <div className="nav-wrapper teal lighten-2 ">
@@ -6,7 +7,20 @@ const Nav = (props) => {
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li><a href='#'>Category</a></li>
         <li><a href='#'>Settings</a></li>
-        <li><a href='#'>Login | Signup</a></li>
+        { !props.current_user ? [
+          <span>
+        <li>
+            <a href= '/login'>Login</a>
+        </li>
+        <li>
+            <a href= 'sessions/new'>Signup</a>
+        </li>
+        </span>
+        ] : [
+          <li>
+            <a href= '/logout'>Logout</a>
+        </li>
+        ] }
       </ul>
     </div>
   </nav>
