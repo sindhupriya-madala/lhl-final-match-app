@@ -9,7 +9,7 @@ const ServiceCardList = (props) => {
 			<div className='services-column col l3 hoverable'>			
 				<div className='card horizontal sticky-action'>
 					<div className='card-image'>
-						<img className='card activator'/>
+						<Img className='card activator' src='sample1.jpg'/>
 						<span className = 'card-name activator'> Services Name 1 </span>
 						<div className='card-action'>
 							<button className="btn waves-effect waves-light" type="submit" name="action" onClick={goToService}>Details
