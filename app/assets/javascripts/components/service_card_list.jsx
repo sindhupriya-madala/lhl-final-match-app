@@ -1,7 +1,7 @@
 const ServiceCardList = (props) => {
 	const goToService = (event) => {
 		event.preventDefault()
-		location.href = 'services/1'
+		location.href = '/services/1'
 	};
   return(
 		<div id='services-container' className='row grey lighten-3'>
