@@ -1,4 +1,8 @@
 const ServiceCardList = (props) => {
+	const goToService = (event) => {
+		event.preventDefault()
+		location.href = 'services/1'
+	};
   return(
 		<div id='services-container' className='row grey lighten-3'>
 
@@ -8,7 +12,7 @@ const ServiceCardList = (props) => {
 						<img className='card activator'/>
 						<span className = 'card-name activator'> Services Name 1 </span>
 						<div className='card-action'>
-							<button className="btn waves-effect waves-light" type="submit" name="action">Details
+							<button className="btn waves-effect waves-light" type="submit" name="action" onClick={goToService}>Details
 								<i className="material-icons right">send</i>
 							</button>
 						</div>

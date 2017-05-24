@@ -8,7 +8,7 @@ class ServicesController < ApplicationController
   def show
     @service = Service.where(id: 1)
     @user = User.where(id: 1)
-    p @service
+    # redirect_to '/services/1'
         
 
   end

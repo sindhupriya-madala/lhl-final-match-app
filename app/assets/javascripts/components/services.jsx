@@ -3,7 +3,8 @@ class Services extends React.Component{
     super(props);
 		this.state = {
 			service : this.props.service,
-			reviews : 'hello'//this.props.reviews
+			reviews : 'hello', //this.props.reviews,
+      current_user: this.props.current_user
 		}
     this.newReview =  this.newReview.bind(this);
 		console.log("service details is",this.props.service);
