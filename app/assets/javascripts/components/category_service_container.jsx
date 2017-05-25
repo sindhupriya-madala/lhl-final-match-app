@@ -1,9 +1,11 @@
-class Container extends React.Component{
+class CategoryService extends React.Component{
     render(){
         return(
-            <div id='main-container' className='row'>
+            <div id='categoryService-container'> 
+            <div className='row'>
                 <Categories />
                 <ServiceCardList />                 
+            </div>
             </div>
         )
     }

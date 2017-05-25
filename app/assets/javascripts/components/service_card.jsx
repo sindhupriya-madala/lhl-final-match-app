@@ -22,7 +22,7 @@ const ServiceCard = (props) => {
 							<label>from 1 to 5</label>
 						</div>
 						<div className="col s6 center-align">
-							<a href='#'>Hoverly Rate</a>
+							<a href='#'>Hourly Rate</a>
 							<label>$ 15.00</label>
 						</div>
 					</div>
