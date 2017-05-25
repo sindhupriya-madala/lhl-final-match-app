@@ -19,12 +19,17 @@
       background-color: $lightblue;
 
       img {
+        margin: 0;
         min-height: 8em;
-      }
+        .card-button-container {
+            width: 100%;
 
-      .card-action {
-        padding: 0;
-        position: absolute;
+          .card-action {
+            padding: 0;
+            position: absolute;
+          }
+
+        }
       }
 
     }

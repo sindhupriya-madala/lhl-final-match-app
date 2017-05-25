@@ -9,7 +9,7 @@ const About = (props) => {
           <div className='col s12'>
               <ul className='tabs grey lighten-3'>
                 <li className="tab col s3"><a href="#gettingstarted" onClick=''>Getting Started</a></li>
-                <li className="tab col s3"><a href="#benefits">Benefits</a></li> 
+                <li className="tab col s3"><a className='active' href="#benefits">Benefits</a></li> 
                 <li className="tab col s3"><a href="#aboutus">About Us</a></li>
               </ul>
           </div>
@@ -18,14 +18,12 @@ const About = (props) => {
 
       <div id='gettingstarted' className='gettingstarted-container'>
         <div className='gettingstarted-content'>
-          
-              <h3> It's Easy! </h3>
-            <ul>
-              <li> 1. Choose a category. </li>
-              <li> 2. Pick an Expert. </li>
-              <li> 3. View details and book an appointment.</li>
-            </ul>
-          
+          <h3> It's Easy! </h3>
+          <ul>
+            <li> 1. Choose a category. </li>
+            <li> 2. Pick an Expert. </li>
+            <li> 3. View details and book an appointment.</li>
+          </ul>
         </div>
       </div>
 

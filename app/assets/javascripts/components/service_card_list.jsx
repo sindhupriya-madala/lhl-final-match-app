@@ -11,11 +11,15 @@ const ServiceCardList = (props) => {
 					<div className='card-image'>
 						<Img className='card activator' src='sample1.jpg'/>
 						<span className = 'card-name activator'> Services Name 1 </span>
-						<div className='card-action'>
-							<button className="btn waves-effect waves-light" type="submit" name="action" onClick={goToService}>Details
-								<i className="material-icons right">send</i>
-							</button>
+
+						<div className='card-button-container'>
+							<div className='card-action'>
+								<button className="btn waves-effect waves-light" type="submit" name="action" onClick={goToService}>Details
+									<i className="material-icons right">send</i>
+								</button>
+							</div>
 						</div>
+
 					</div>
 
 					<div className='card-stacked'>

@@ -2,11 +2,14 @@
 
 #about-container {
   border-bottom: solid;
-    border-top: solid;
-    border-color: lightblue;
-    border-width: .05em;
+  border-top: solid;
+  border-color: lightblue;
+  border-width: .05em;
   .tabs-container {
     padding-left: 20%;
+    border-bottom: solid;
+    border-color: lightblue;
+    border-width: .05em;
   }
   .gettingstarted-container {
     height: 27vh;
