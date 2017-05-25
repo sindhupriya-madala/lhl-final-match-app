@@ -1,0 +1,22 @@
+<nav>
+  <div class="nav-wrapper blue darken-2 ">
+    <a href="/" class="brand-logo">Expert</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to "Messages", messages_path %></li>
+      <li><%= link_to "My Service", service_path(:id => 1) %></li>
+      
+      <% if user_signed_in? %>
+        <li>Welcome <%= current_user.email %></li>
+        <li><%= link_to "logout", destroy_user_session_path, method: 'DELETE' %></li>
+      <% else %>
+        <li><%= link_to "login", new_user_session_path %></li>
+        <li><%= link_to "signup", new_user_registration_path %></li>
+      <% end %>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><%= link_to "My Service", service_path(:id => 1) %></li>
+    </ul>
+  </div>
+
+</nav>

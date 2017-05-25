@@ -12,7 +12,7 @@ var Banner = React.createClass({
 	
   render: function() {
 		return(
-		<div id='banner-container' classNameName='banner'>		
+		<div id='banner-container' className='banner'>		
 		  <div className="carousel carousel-slider center" data-indicators="true">
 
 				<a className="carousel-item" href="#one!">
