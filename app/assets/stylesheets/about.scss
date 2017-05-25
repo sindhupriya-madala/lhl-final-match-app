@@ -1,15 +1,40 @@
 @import 'partials/variables';
 
 #about-container {
-
+  border-bottom: solid;
+  border-top: solid;
+  border-color: lightblue;
+  border-width: .05em;
   .tabs-container {
-    .tabs {
-    background-color: $grey;
+    padding-left: 20%;
+    border-bottom: solid;
+    border-color: lightblue;
+    border-width: .05em;
+  }
+  .gettingstarted-container {
+    height: 27vh;
+    .gettingstarted-content{
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    list-style-type: circle;
+    ul {
+      padding-top: 1em;
+    }
     }
   }
-
-
-
+  .benefits-container {
+    color: $blue;
+    height: 27vh;
+  }
+  .aboutus-container {
+    height: 27vh;
+    .aboutus-content {
+      position: absolute;
+      padding: 0 5em 0 5em;
+      text-align: center;
+    }
+  }
 
 
 
