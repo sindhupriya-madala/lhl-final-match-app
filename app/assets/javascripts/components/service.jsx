@@ -1,4 +1,4 @@
-class Services extends React.Component{
+class Service extends React.Component{
 	constructor(props) {
     super(props);
 		this.state = {

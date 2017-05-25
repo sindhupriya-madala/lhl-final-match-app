@@ -1,4 +1,4 @@
-const EditProfile = (props) => {
+const EditService = (props) => {
     
   const updateProfile = (event) => {
   
@@ -20,9 +20,9 @@ const EditProfile = (props) => {
 
     return(
       <form>
-        <div className="card large orange lighten-5">
+        <div className="card large purple lighten-5">
           <div className="card-content black-text">
-            <span className="card-title">Edit Profile</span>
+            <span className="card-title center pink-text lighten-1"><h3>Edit Profile</h3></span>
             <div className="row">
               <div className="input-field col s6">
                 <input defaultValue="Alvin" id="first_name" type="text" className="validate"></input>
