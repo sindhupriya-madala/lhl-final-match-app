@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:destroy]
   resources :users, only: [:new, :create]
+  resources :messages, only: [:create, :show, :destroy]
 end

@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_user_id"
   has_many :received_messages, class_name: "Message", foreign_key: "receiver_user_id"
+  has_many :messages, class_name: "Message", foreign_key: "receiver_user_id"
+  
   mount_uploader :profile_pic, UserImageUploader
 
     # User profile_pic Validation
