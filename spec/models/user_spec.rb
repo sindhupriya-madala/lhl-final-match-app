@@ -1,5 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  has_many :reviews
+  pending "add some examples to (or delete) #{__FILE__}"
 end
