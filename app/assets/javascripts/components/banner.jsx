@@ -2,11 +2,9 @@ var Banner = React.createClass({
 
 	componentDidMount: function() {
 		$('.carousel.carousel-slider').carousel({fullWidth: true});
-
 		setInterval(function(){
 			$('.carousel').carousel('next');
 		}, 5000);
-
 	},
 
 	

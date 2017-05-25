@@ -6,8 +6,8 @@ const ServiceCardList = (props) => {
   return(
 		<div id='services-container' className='row'>
 
-			<div className='services-column col l3 hoverable'>			
-				<div className='card horizontal sticky-action'>
+			<div className='services-column col l3'>			
+				<div className='card horizontal sticky-action hoverable'>
 					<div className='card-image'>
 						<Img className='card activator' src='sample1.jpg'/>
 						<span className = 'card-name activator'> Services Name 1 </span>

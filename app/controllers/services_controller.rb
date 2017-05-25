@@ -1,7 +1,9 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @service = Service.where
+    @services = Service.where
+    p @services
+    p "hello from service controller"
     
   end
 

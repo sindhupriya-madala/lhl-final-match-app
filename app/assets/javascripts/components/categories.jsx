@@ -1,10 +1,22 @@
-const Categories = (props) => {
-  return(
+const Categories = React.createClass({
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		categories : this.props.categories
+	// 	}
+	// };
+	showServices() {
+		event.preventDefault();
+		location.href = '/categories/1/services'
+	},
+
+  render: function() {
+		return(
 			<div id='category-container' className='categories-column col l2'>
 				
 				<div className='card'>
 					<div className='card-content white-text'>
-						<span className='card-title center-align'> All </span>
+						<span className='card-title center-align' onClick={this.showServices}> All </span>
 					</div>
 				</div>
 
@@ -39,5 +51,6 @@ const Categories = (props) => {
 				</div>
 
 			</div>
-  )
-}
+  	)
+	}
+})
