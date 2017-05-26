@@ -12,10 +12,12 @@
   .services-column{
     margin: 1em 0em 0em 1.9em;
     min-width: 30%;
-    background-color: $blue;
+    // background-color: $blue;
   
     .card {
-      min-height: 15em;
+      min-height: 17em;
+      border-style: solid;
+      border-color: $grey;
       background-color: $lightblue;
 
       img {
@@ -31,6 +33,10 @@
 
         }
       }
+      .card-button-container {
+        position: absolute;
+        // background-color: $yellow;
+      }
 
     }
     .card-stacked {
@@ -42,6 +48,20 @@
         .card-title {
           color: $black;
         }
+
+        .card-rating {
+          color: $blue;
+          .star {
+            content: '\f005';
+    
+          }
+          p {
+            border-bottom: .1em solid;
+            color: $grey;
+            font-size: .7em;
+          }
+        }
+
         .card-details {
           color: $black;
           font-size: .8em;
