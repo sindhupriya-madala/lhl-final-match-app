@@ -75,5 +75,4 @@ ActiveRecord::Schema.define(version: 20170525185538) do
   end
 
   add_foreign_key "reviews", "services"
-  add_foreign_key "reviews", "users"
 end
