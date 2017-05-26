@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
   resources :categories, only: [:show]
-  resources :services, only: [:new, :show, :index] do
+  resources :services, only: [:new, :show, :index, :edit, :destroy] do
     resources :reviews, only: [:create, :index]
   end
   resources :messages, only: [:index]

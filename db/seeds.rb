@@ -23,7 +23,7 @@ u1 = User.create!({
   first_name: 'ahmed',
   last_name: 'adil',
   email: 'test@test.com',
-  password_digest: '124',
+  password: '123456',
   profile_pic: 'asd'
 })
 
@@ -31,7 +31,7 @@ u2 = User.create!({
   first_name: 'sindhu',
   last_name: 'priya',
   email: 'test2@test.com',
-  password_digest: '124',
+  password: '123456',
   profile_pic: 'asd'
 })
 
@@ -39,7 +39,7 @@ u3 = User.create!({
   first_name: 'sean',
   last_name: 'park',
   email: 'test3@test.com',
-  password_digest: '123',
+  password: '123456',
   profile_pic: 'asd'
 })
 
@@ -47,7 +47,7 @@ u4 = User.create!({
   first_name: 'alvyn',
   last_name: 'ssss',
   email: 'test4@test.com',
-  password_digest: '124',
+  password: '123456',
   profile_pic: 'asd'
 })
 

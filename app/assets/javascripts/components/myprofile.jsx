@@ -6,14 +6,30 @@ class MyProfile extends React.Component{
       reviews : 'hello', //this.props.reviews,
       current_user: this.props.current_user,
       show_edit : false,
-      show_delete : false
+      show_delete : false,
+      show_add : false
     }
     this.updatedProfile = this.updatedProfile.bind(this);
   };
   
+  addProfile() {
+    if(this.show_delete != 'false' ) {
+      this.setState({show_delete: false})
+    }
+    if(this.show_edit != 'false') {
+      this.setState({show_edit: false})
+    }
+    this.setState(prevState => ({
+      show_add: !prevState.show_add
+    }));
+  };
+
   editProfile() {
     if(this.show_delete != 'false') {
       this.setState({show_delete: false})
+    }
+    if(this.show_add != 'false') {
+      this.setState({show_add: false})
     }
     this.setState(prevState => ({
       show_edit: !prevState.show_edit
@@ -28,6 +44,9 @@ class MyProfile extends React.Component{
     if(this.show_edit != 'false') {
       this.setState({show_edit: false})
     }
+    if(this.show_add != 'false') {
+      this.setState({show_add: false})
+    }
     this.setState(prevState => ({
       show_delete: !prevState.show_delete
     }));
@@ -36,6 +55,7 @@ class MyProfile extends React.Component{
   render() {
     const editDiv = (this.state.show_edit)?<EditService /> : ''
     const deleteDiv = (this.state.show_delete)?<DeleteService /> : ''
+    const addDiv = (this.state.show_add)?<AddService /> : ''
     return(
       <div>
         <div className="row">
@@ -58,7 +78,7 @@ class MyProfile extends React.Component{
                 </li>
                 <li>
                   <a className="btn-floating teal darken-4">
-                    <i className="material-icons" onClick={() => {this.deleteProfile();}}>add</i>
+                    <i className="material-icons" onClick={() => {this.addProfile();}}>add</i>
                   </a>
                 </li>
               </ul>
@@ -67,6 +87,7 @@ class MyProfile extends React.Component{
           <div className="col s12 m6"><ServiceCard /></div>
           <div className="col s12 m6">{editDiv}</div>
           <div className="col s12 m6">{deleteDiv}</div>
+          <div className="col s12 m6">{addDiv}</div>
         </div>
             <div className="row"><AllReviews /></div>
       </div> 
