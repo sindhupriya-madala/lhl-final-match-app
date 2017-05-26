@@ -9,6 +9,8 @@ class Service extends React.Component{
     this.newReview =  this.newReview.bind(this);
 		console.log("service details is",this.props.service);
 		console.log("user details is :",this.props.user);
+		console.log("current_user details is :",this.props.current_user);
+
   };
 
 	newReview(newreview) {
@@ -19,6 +21,7 @@ class Service extends React.Component{
   render(){
 		console.log("service details is",this.props.service);
 		console.log("user details is :",this.props.user);
+
     return(
 			<div>
 				<div className="row">
