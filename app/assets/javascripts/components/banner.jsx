@@ -31,6 +31,22 @@ var Banner = React.createClass({
 					</div>
 				</a>
 
+				<a className="carousel-item">
+					<Img src='banner-carpenter.jpg'/>
+					<div className="carousel-fixed-item center">
+						<h2 className="carousel-content">This is your third panel</h2>
+						<a className="btn waves-effect white grey-text darken-text-2">button</a>
+					</div>
+				</a>
+
+				<a className="carousel-item">
+					<Img src='banner-painter.jpg'/>
+					<div className="carousel-fixed-item center">
+						<h2 className="carousel-content">This is your fourth panel</h2>
+						<a className="btn waves-effect white grey-text darken-text-2">button</a>
+					</div>
+				</a>
+
   		</div>
 		</div>
 

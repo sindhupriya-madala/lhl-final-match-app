@@ -6,11 +6,10 @@ const ServiceCardList = (props) => {
   return(
 		<div id='services-container' className='row'>
 
-			<div className='services-column col l3 hoverable'>			
-				<div className='card horizontal sticky-action'>
+			<div className='services-column col l3'>			
+				<div className='card horizontal sticky-action hoverable'>
 					<div className='card-image'>
-						<Img className='card activator' src='sample1.jpg'/>
-						<span className = 'card-name activator'> Services Name 1 </span>
+						<Img className='card' src='sample1.jpg'/>
 
 						<div className='card-button-container'>
 							<div className='card-action'>
@@ -25,13 +24,22 @@ const ServiceCardList = (props) => {
 					<div className='card-stacked'>
 						<div className='card-content white-text'>
 							<p className='card-title'> Name 1 </p>
+							<div className='card-rating'> 
+								<input className="star star-5" id="star-5" type="radio" name="star"/>
+								<i className="material-icons">star</i>
+								<input className="star star-4" id="star-4" type="radio" name="star"/>
+								<i className="material-icons">star</i>
+								<input className="star star-3" id="star-3" type="radio" name="star"/>
+								<i className="material-icons">star</i>
+								<input className="star star-2" id="star-2" type="radio" name="star"/>
+								<i className="material-icons">star</i>
+								<input className="star star-1" id="star-1" type="radio" name="star"/>
+								<i className="material-icons">star</i>
+								<p> Average Rating </p> 
+							</div>
 							<span className='card-details'> Information about the expert </span>
-						</div>
-					</div>
 
-					<div className='card-reveal'>
-						<span className='card-title'>Card Title<i className='material-icons right'>list</i></span>
-						<p> extra info here </p>
+						</div>
 					</div>
 
 				</div>

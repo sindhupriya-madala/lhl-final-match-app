@@ -38,6 +38,18 @@ const Categories = (props) => {
 					</div>
 				</div>
 
+				<div className='card'>
+					<div className='card-content white-text'>
+						<span className='card-title center-align'> Cleaner </span>
+					</div>
+				</div>
+
+				<div className='card'>
+					<div className='card-content white-text'>
+						<span className='card-title center-align'> Interior Design </span>
+					</div>
+				</div>
+
 			</div>
   )
 }
