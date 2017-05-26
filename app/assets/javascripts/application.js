@@ -19,3 +19,6 @@
 //= require react_rails_img
 //= require_tree .
 
+$(document).ready(function(){
+  $(".button-collapse").sideNav();
+})
