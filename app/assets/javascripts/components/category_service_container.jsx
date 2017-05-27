@@ -5,7 +5,7 @@ class CategoryService extends React.Component{
             <div id='categoryService-container'> 
                 <div className='row'>
                     <Categories categories={this.props.categories}/>
-                    <ServiceCardList />                 
+                    <ServiceCardList current_user={this.props.current_user}/>                 
                 </div>
             </div>
         )

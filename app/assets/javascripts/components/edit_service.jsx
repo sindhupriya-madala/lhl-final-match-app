@@ -1,23 +1,52 @@
-const EditService = (props) => {
-    
-  const updateProfile = (event) => {
-  
-    event.preventDefault()
+class EditService extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      first_name: this.props.user.first_name,
+      last_name: this.props.user.last_name,
+      description: '',
+      hourly_rate: ''
+    };
+    // this.handleChange = this.handleChange.bind(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeHourlyRate = this.onChangeHourlyRate.bind(this);
+    this.updateProfile = this.updateProfile.bind(this);
 
+  } 
+  handleChange(event) {
+    this.setState({category_id: event.target.value});
+    console.log('=================',event.target.value);
+  }
+
+  onChangeDescription(event){
+    this.setState({description: event.target.value});
+    console.log('=================',event.target.value);
+  }
+
+  onChangeHourlyRate(event){
+    this.setState({hourly_rate: event.target.value});
+    console.log('=================',event.target.value);
+  }
+  updateProfile(){
+    event.preventDefault();
+    var data = { 
+      service: {
+        hourly_rate: this.state.hourly_rate, 
+        description: this.state.description,
+        category_id: this.state.category_id
+        }
+    }
     $.ajax({ 
-      url: '/services/1', 
+      url: '/services', 
       type: 'POST', 
-      data: { 
-        user: {first_name, last_name}, 
-        service: {hourly_rate, description}
-      }, 
-      success: (data) => { 
-        console.log('it worked!', response);
-        this.props.updatedProfile(data); 
+      data: data,
+      success: (e) => { 
+        console.log('it worked!', e);
       } 
     });
-  };
+  }
 
+render() {
     return(
       <form>
         <div className="card large purple lighten-5">
@@ -51,3 +80,4 @@ const EditService = (props) => {
       </form>
     )
   }
+}

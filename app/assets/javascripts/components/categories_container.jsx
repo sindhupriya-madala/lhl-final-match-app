@@ -8,7 +8,7 @@ class Categories extends React.Component{
   };
 
   openCategory(event){
-    var {id} = event.target;
+    var id = event.target.id;
     console.log("selected value is:",id);
     $.ajax({ 
       url: '/services', 
@@ -27,7 +27,7 @@ class Categories extends React.Component{
       return(
           <div className='card' key={category.id} >
             <div className='card-content white-text'>
-              <span className='card-title center-align' onClick={this.openCategory}> {category.name} </span>
+              <span className='card-title center-align' id={category.id} onClick={this.openCategory}> {category.name} </span>
             </div>
           </div>
       )

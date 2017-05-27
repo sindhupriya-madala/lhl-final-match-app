@@ -28,9 +28,6 @@ class AddService extends React.Component{
     console.log('=================',event.target.value);
   }
   updateProfile(){
-    // var description = this.state.description;
-    // var hourly_rate = this.state.hourly_rate;
-    // var category = this.state.category;
     event.preventDefault();
     var data = { 
       service: {

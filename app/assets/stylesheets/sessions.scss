@@ -1,3 +1,24 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.login_div {
+    position: absolute;
+    height: 50%; 
+    width: 50%; 
+    left: 25%;
+    top:25%;
+}
+
+.forgot_password {
+    color: red;
+    position: absolute;
+    left: 60%;
+    top : 70%;
+}
+
+.sign_up {
+    color: red;
+    position: absolute;
+    left: 60%;
+    top : 74%;
+}
