@@ -22,9 +22,14 @@ class ServicesController < ApplicationController
 
   end
 
-  def new
-    @service = params[:service]
-    @categories = Category.all
+  def create
+    @service = Service.new(service_params)
+    @service[:user_id] = current_user.id.to_i
+    puts @service
+
+    if @service.save
+      puts "saved!!!"
+    end
   end
 
   def edit
@@ -35,4 +40,13 @@ class ServicesController < ApplicationController
 
   end
 
+  private
+
+  def service_params
+    params.require(:service).permit(
+      :category_id,
+      :description,
+      :hourly_rate
+    )
+  end
 end
