@@ -1,33 +1,41 @@
-const AddService = (props) => {
-    
-  const updateProfile = (event) => {
+const AddService = React.createClass({
   
-    event.preventDefault()
+  updateProfile(){
+    var description = this.refs.description.value;
+    var hourly_rate = this.refs.hourly_rate.value;
+    var category = this.refs.category.value;
+    event.preventDefault();
+    var data = { 
+      service: {hourly_rate, description},
+      category: {category}
+    }
 
     $.ajax({ 
-      url: '/services/1', 
+      url: '/services/new', 
       type: 'POST', 
-      data: { 
-        user: current_user, 
-        service: {hourly_rate, description},
-        category: category
-      }, 
+      data: data,
       success: (data) => { 
-        console.log('it worked!', response);
+        console.log('it worked!', data);
       } 
     });
-  };
-
+  },
+  render(){
+    const categories = this.props.categories.map((cat) => { 
+      return (
+        <option value= "{cat.id}"> {cat.name}</option>
+      )
+    });
     return(
-      <form>
+      <form onSubmit={this.updateProfile}>
         <div className="card large purple lighten-5">
           <div className="card-content black-text">
             <span className="card-title center pink-text lighten-1"><h3>Add Service</h3></span>
             <div className="row">
               <div className="input-field col s6 center">
-                <select className="browser-default category">
+                <select className="browser-default category" refs="category">
+                  {categories}
                   <option value="" disabled selected>please select category</option>
-                  <option value="painter"> Painter</option>
+                  <option value="1"> Painter</option>
                   <option value="ac-repair"> ac-repair</option>
                   <option value="technician"> Technician</option>
                   <option value="carpenter"> Carpenter</option>
@@ -41,12 +49,12 @@ const AddService = (props) => {
                 <label className="active" htmlFor="hourly_rate">Hourly Rate</label>
               </div>
               <div className="input-field col s12">
-                <textarea id="description" className="materialize-textarea validate"></textarea>            
+                <textarea ref='description' id="description" className="materialize-textarea validate"></textarea>            
                 <label className="active" htmlFor="description">Description</label>
               </div>
             </div>
             <div className="card-action">
-              <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.updateProfile}>Submit
+              <button className="btn waves-effect waves-light" type="submit" >Submit
                 <i className="material-icons right">send</i>
               </button>
             </div>
@@ -55,3 +63,4 @@ const AddService = (props) => {
       </form>
     )
   }
+});

@@ -31,4 +31,8 @@ class User < ApplicationRecord
   #       user
   #     end  
   #   end
+  def self.isUser(service_user_id, current_user_id)
+    return (service_user_id === current_user_id)
+  end
+  
 end

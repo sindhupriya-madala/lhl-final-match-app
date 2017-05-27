@@ -1,3 +1,8 @@
-<%= react_component 'ServiceOrProfile',{services: @services, user: '1', current_user: '1'}%>
-
-<%= current_user.first_name %>
+<%= react_component 'ServiceOrProfile', 
+{
+  service: @service,
+  categories: @categories,
+  reviews: @reviews, 
+  isUser: @isUser,
+  userInfo: @userInfo
+  }%>

@@ -7,12 +7,22 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.where(id: 1)
-    @user = User.where(id: 1)
-    p @user
+    @service = Service.where(user_id: params[:id])
+    @categories= Category.all
+    @reviews = Review.where(user_id: params[:id])
+    @user = User.find(params[:id])
+    @isUser = User.isUser(params[:id].to_i, current_user.id.to_i)
+    @userInfo = {
+      email: @user.email,
+      id: @user.id,
+      first_name: @user.first_name,
+      last_name: @user.last_name
+    }
+    puts @user.email
   end
 
   def new
+    @service = params[:service]
 
   end
 

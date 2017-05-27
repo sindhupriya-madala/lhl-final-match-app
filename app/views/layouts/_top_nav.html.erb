@@ -4,7 +4,7 @@
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><%= link_to "Messages", messages_path %></li>
-      <li><%= link_to "My Service", service_path(:id => 1) %></li>
+      <li><%= link_to "My Service", service_path(:id => current_user.id) %></li>
       
       <% if user_signed_in? %>
         <li>Welcome <%= current_user.email %></li>
@@ -15,7 +15,7 @@
       <% end %>
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li><%= link_to "My Service", service_path(:id => 1) %></li>
+      <li><%= link_to "My Service", service_path(:id => current_user.id) %></li>
     </ul>
   </div>
 
