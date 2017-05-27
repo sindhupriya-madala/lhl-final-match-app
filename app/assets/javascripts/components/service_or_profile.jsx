@@ -13,7 +13,7 @@ class ServiceOrProfile extends React.Component{
   render() {
 
     console.log(this.props.userInfo.email);
-    const service = this.props.isUser ? <MyProfile /> : <Service />
+    const service = this.props.isUser ? <MyProfile categories = {this.state.categories}/> : <Service />
     return(
       <div>
         {service}

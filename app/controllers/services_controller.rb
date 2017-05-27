@@ -8,11 +8,11 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.where(user_id: params[:id])
-    @categories= Category.all
-    @reviews = Review.where(user_id: params[:id])
-    @user = User.find(params[:id])
-    @isUser = User.isUser(params[:id].to_i, current_user.id.to_i)
+    @service    = Service.where(user_id: params[:id])
+    @categories = Category.all
+    @reviews    = Review.where(user_id: params[:id])
+    @user       = User.find(params[:id])
+    @isUser     = User.isUser(params[:id].to_i, current_user.id.to_i)
     @userInfo = {
       email: @user.email,
       id: @user.id,
@@ -24,7 +24,7 @@ class ServicesController < ApplicationController
 
   def new
     @service = params[:service]
-
+    @categories = Category.all
   end
 
   def edit

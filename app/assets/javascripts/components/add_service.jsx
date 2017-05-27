@@ -1,9 +1,17 @@
-const AddService = React.createClass({
-  
+class AddService extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {value: 'painter'};
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
   updateProfile(){
     var description = this.refs.description.value;
     var hourly_rate = this.refs.hourly_rate.value;
-    var category = this.refs.category.value;
+    var category = this.className.category.value;
     event.preventDefault();
     var data = { 
       service: {hourly_rate, description},
@@ -18,11 +26,12 @@ const AddService = React.createClass({
         console.log('it worked!', data);
       } 
     });
-  },
+  }
+
   render(){
     const categories = this.props.categories.map((cat) => { 
       return (
-        <option value= "{cat.id}"> {cat.name}</option>
+        <option key={cat.id}> {cat.name}</option>
       )
     });
     return(
@@ -32,16 +41,8 @@ const AddService = React.createClass({
             <span className="card-title center pink-text lighten-1"><h3>Add Service</h3></span>
             <div className="row">
               <div className="input-field col s6 center">
-                <select className="browser-default category" refs="category">
+                <select value={this.state.value} className="browser-default category" onChange={this.handleChange}>
                   {categories}
-                  <option value="" disabled selected>please select category</option>
-                  <option value="1"> Painter</option>
-                  <option value="ac-repair"> ac-repair</option>
-                  <option value="technician"> Technician</option>
-                  <option value="carpenter"> Carpenter</option>
-                  <option value="electrician"> Electrician</option>
-                  <option value="cleaner"> Cleaner</option>
-                  <option value="interior-designer">Interior-Designer</option>
                 </select>       
               </div>
               <div className="input-field col s6 center">
@@ -63,4 +64,4 @@ const AddService = React.createClass({
       </form>
     )
   }
-});
+}

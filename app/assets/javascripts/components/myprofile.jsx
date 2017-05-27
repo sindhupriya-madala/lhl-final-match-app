@@ -5,6 +5,7 @@ class MyProfile extends React.Component{
       service : this.props.service,
       reviews : 'hello', //this.props.reviews,
       current_user: this.props.current_user,
+      categories: this.props.categories,
       show_edit : false,
       show_delete : false,
       show_add : false
@@ -55,7 +56,7 @@ class MyProfile extends React.Component{
   render() {
     const editDiv = (this.state.show_edit)?<EditService /> : ''
     const deleteDiv = (this.state.show_delete)?<DeleteService /> : ''
-    const addDiv = (this.state.show_add)?<AddService /> : ''
+    const addDiv = (this.state.show_add)?<AddService categories = {this.state.categories}/> : ''
     return(
       <div>
         <div className="row">

@@ -25,9 +25,9 @@ class Categories extends React.Component{
   render() {
     const categories = this.props.categories.map((category) => {
       return(
-          <div className='card'>
+          <div className='card' key={category.id} >
             <div className='card-content white-text'>
-              <span className='card-title center-align' id={category.id} onClick={this.openCategory}> {category.name} </span>
+              <span className='card-title center-align' onClick={this.openCategory}> {category.name} </span>
             </div>
           </div>
       )
