@@ -2,23 +2,21 @@
 class Messages extends React.Component{  
   constructor(props) {
     super(props);
-    console.log("mesages :", this.props.messages);
+    console.log("messages :", this.props.messages);
     this.state = {
       messages: this.props.messages
     }
   };
 
   render() {
-    console.log("mesages :", this.props.messages);
+    console.log("messages :", this.props.messages);
     console.log("today is :", this.today);
     
     const messages = this.props.messages.map((message) => {
-    var today = ((new Date(message.created_at)).toString()).slice(0, 16);
-    
-    console.log(today);
-      
+      var today = ((new Date(message.created_at)).toString()).slice(0, 16);   
+      console.log(today);        
       return(
-       <li>
+        <li>
           <div className="collapsible-header">
             <span className="badge">{message.id}</span>
             <i className="material-icons">place</i>
@@ -28,7 +26,7 @@ class Messages extends React.Component{
             <p>{message.content}</p> 
             <p>{today}</p>
           </div>
-      </li>  
+        </li>  
       )
     });
     

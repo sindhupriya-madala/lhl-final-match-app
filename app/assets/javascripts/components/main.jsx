@@ -5,7 +5,7 @@ class Main extends React.Component{
             <div>
                 <Banner />
                 <About />
-                <CategoryService />              
+                <CategoryService categories={this.props.categories}/>              
             </div>
         )
     }
