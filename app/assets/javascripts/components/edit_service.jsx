@@ -2,8 +2,6 @@ class EditService extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      first_name: this.props.user.first_name,
-      last_name: this.props.user.last_name,
       description: '',
       hourly_rate: ''
     };
@@ -11,7 +9,7 @@ class EditService extends React.Component{
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeHourlyRate = this.onChangeHourlyRate.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
-
+    console.log("current_user is:", this.props.current_user);
   } 
   handleChange(event) {
     this.setState({category_id: event.target.value});
@@ -54,15 +52,15 @@ render() {
             <span className="card-title center pink-text lighten-1"><h3>Edit Profile</h3></span>
             <div className="row">
               <div className="input-field col s6">
-                <input defaultValue="Alvin" id="first_name" type="text" className="validate"></input>
+                <input defaultValue={this.props.current_user.first_name} id="first_name" type="text" className="validate"></input>
                 <label className="active" htmlFor="first_name">First Name</label>
               </div>
               <div className="input-field col s6">
-                <input defaultValue="shah" id="last_name" type="text" className="validate"></input>
+                <input defaultValue={this.props.current_user.last_name} id="last_name" type="text" className="validate"></input>
                 <label className="active" htmlFor="last_name">Last Name</label>
               </div>
               <div className="input-field col s6">
-                <input defaultValue='15' id="hourly_rate" type="text" className="validate"></input>
+                <input defaultValue={this.props.service.hourly_rate} id="hourly_rate" type="text" className="validate"></input>
                 <label className="active" htmlFor="hourly_rate">Hourly Rate</label>
               </div>
               <div className="input-field col s12">

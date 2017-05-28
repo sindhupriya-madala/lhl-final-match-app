@@ -11,6 +11,8 @@ class MyProfile extends React.Component{
       show_add : false
     }
     this.updatedProfile = this.updatedProfile.bind(this);
+    console.log("current_user is :", this.state.current_user);
+    console.log("services is:", this.state.service);
   };
   
   addProfile() {
@@ -54,7 +56,7 @@ class MyProfile extends React.Component{
   };
 
   render() {
-    const editDiv = (this.state.show_edit)?<EditService /> : ''
+    const editDiv = (this.state.show_edit)?<EditService current_user={this.state.current_user} service={this.state.service}/> : ''
     const deleteDiv = (this.state.show_delete)?<DeleteService /> : ''
     const addDiv = (this.state.show_add)?<AddService categories = {this.state.categories}/> : ''
     return(

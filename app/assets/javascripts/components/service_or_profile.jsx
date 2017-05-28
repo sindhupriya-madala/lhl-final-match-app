@@ -5,6 +5,7 @@ class ServiceOrProfile extends React.Component{
 			service : this.props.service,
       categories: this.props.categories,
 			reviews : this.props.reviews,
+      userInfo : this.props.userInfo,
 			show_review_message : false,
 			show_add_edit_delete : false
 		}
@@ -13,7 +14,12 @@ class ServiceOrProfile extends React.Component{
   render() {
 
     console.log(this.props.userInfo.email);
-    const service = this.props.isUser ? <MyProfile categories = {this.state.categories}/> : <Service />
+    const service = this.props.isUser ? 
+      <MyProfile 
+        categories={this.state.categories} 
+        service={this.state.service} 
+        current_user={this.state.userInfo}/> 
+      : <Service />
     return(
       <div>
         {service}
