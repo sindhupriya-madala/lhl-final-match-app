@@ -11,6 +11,8 @@ class ServiceCardList extends React.Component{
 		location.href = '/services/{current_user.id}'
 	};
   render() {
+    console.log("===========hello===========");
+    console.log("in service card list", this.props.services);
     return(
       <div id='services-container' className='row'>
         <div className='services-column col l3'>			
@@ -54,5 +56,15 @@ class ServiceCardList extends React.Component{
 
       </div>
     )
+    /*return(
+      <div>
+        { this.props.services.map((service) => {
+          console.log("in service card list", service);
+           <div id='services-container' className='row'>
+              <ServiceThumb service = {service}/>
+          </div>
+        })}
+      </div>
+    )*/
   }
 }
