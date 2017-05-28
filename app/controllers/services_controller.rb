@@ -20,7 +20,7 @@ class ServicesController < ApplicationController
       first_name: @user.first_name,
       last_name: @user.last_name
     }
-
+    p @userInfo
   end
 
   def create
