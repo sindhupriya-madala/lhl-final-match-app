@@ -6,18 +6,16 @@ class CategoryService extends React.Component{
             services: this.props.services
         }
     }
-
-    
     
     render(){
-        console.log("category service controller:",this.props.services);
-        return(
-            <div id='categoryService-container'> 
-                <div className='row'>
-                    <Categories categories={this.props.categories}/>
-                    <ServiceCardList services = {this.props.services} />                 
-                </div>
-            </div>
-        )
+      console.log("category service controller:",this.props.services);
+      return(
+        <div id='categoryService-container'> 
+          <div className='row'>
+            <Categories categories={this.state.categories}/>
+            <ServiceCardList services={this.state.services} />     
+          </div>
+        </div>
+      )
     }
 }
