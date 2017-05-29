@@ -18,8 +18,11 @@ class ServiceOrProfile extends React.Component{
       <MyProfile 
         categories={this.state.categories} 
         service={this.state.service} 
-        current_user={this.state.userInfo}/> 
-      : <Service />
+        user={this.state.userInfo}/> 
+      : <Service 
+        service={this.state.service}
+        user={this.state.userInfo}
+      />
     return(
       <div>
         {service}

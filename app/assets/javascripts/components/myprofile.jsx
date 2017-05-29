@@ -4,14 +4,14 @@ class MyProfile extends React.Component{
     this.state = {
       service : this.props.service,
       reviews : 'hello', //this.props.reviews,
-      current_user: this.props.current_user,
+      user: this.props.user,
       categories: this.props.categories,
       show_edit : false,
       show_delete : false,
       show_add : false
     }
     this.updatedProfile = this.updatedProfile.bind(this);
-    console.log("current_user is :", this.state.current_user);
+    console.log("user is :", this.state.user);
     console.log("services is:", this.state.service);
   };
   
@@ -40,7 +40,7 @@ class MyProfile extends React.Component{
   };
 
   updatedProfile(data) {
-    this.setState({service : data.service, current_user : data.user})
+    this.setState({service : data.service, user : data.user})
   };
 
   deleteProfile() {
@@ -56,7 +56,7 @@ class MyProfile extends React.Component{
   };
 
   render() {
-    const editDiv = (this.state.show_edit)?<EditService current_user={this.state.current_user} service={this.state.service}/> : ''
+    const editDiv = (this.state.show_edit)?<EditService current_user={this.state.user} service={this.state.service}/> : ''
     const deleteDiv = (this.state.show_delete)?<DeleteService service={this.state.service}/> : ''
     const addDiv = (this.state.show_add)?<AddService categories = {this.state.categories}/> : ''
     return(
@@ -87,7 +87,7 @@ class MyProfile extends React.Component{
               </ul>
             </div>
           </div>
-          <div className="col s12 m6"><ServiceCard /></div>
+          <div className="col s12 m6"><ServiceCard user={this.state.user} service={this.state.service}/></div>
           <div className="col s12 m6">{editDiv}</div>
           <div className="col s12 m6">{deleteDiv}</div>
           <div className="col s12 m6">{addDiv}</div>
