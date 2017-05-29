@@ -1,23 +1,27 @@
-const DeleteService = (props) => {
+class DeleteService extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id:this.props.service[0].id,
+    };
+    this.delProfile = this.delProfile.bind(this);
+    console.log("service is:", this.props.service[0]);
+  } 
 
-  const delProfile = (event) => {
-  
-    event.preventDefault()
-
+   delProfile(event){
+    // event.preventDefault()
     $.ajax({ 
-      url: '/services/1', 
-      type: 'POST', 
-      data: { 
-        user : current_user
-      }, 
+      url: `/services/${this.state.id}`, 
+      type: 'DELETE', 
       success: (data) => { 
-        console.log('it worked!', response);
+        console.log('it worked!', data);
       } 
     });
   };
 
+  render() {
     return(
-        <form>
+      <form>
         <div className="card small purple lighten-5 col s10">
           <div className="card-content black-text">
             <span className="card-title center pink-text lighten-1"><h3>Delete Profile</h3></span>
@@ -32,4 +36,5 @@ const DeleteService = (props) => {
         </div>
       </form>
     )
+  }
 }

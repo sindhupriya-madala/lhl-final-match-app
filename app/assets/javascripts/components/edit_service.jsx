@@ -2,17 +2,27 @@ class EditService extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      description: '',
-      hourly_rate: ''
+      id:this.props.service[0].id,
+      description:this.props.service[0].description,
+      hourly_rate: this.props.service[0].hourly_rate,
+      first_name: this.props.current_user.first_name,
+      last_name: this.props.current_user.last_name
     };
-    // this.handleChange = this.handleChange.bind(this);
+    this.onChangeFirstName = this.onChangeFirstName.bind(this);
+    this.onChangeLastName = this.onChangeLastName.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeHourlyRate = this.onChangeHourlyRate.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
-    console.log("current_user is:", this.props.current_user);
+    console.log("service is:", this.props.service[0]);
   } 
-  handleChange(event) {
-    this.setState({category_id: event.target.value});
+  
+  onChangeFirstName(event){
+    this.setState({first_name: event.target.value});
+    console.log('=================',event.target.value);
+  }
+
+  onChangeLastName(event){
+    this.setState({last_name: event.target.value});
     console.log('=================',event.target.value);
   }
 
@@ -28,15 +38,14 @@ class EditService extends React.Component{
   updateProfile(){
     event.preventDefault();
     var data = { 
-      service: {
-        hourly_rate: this.state.hourly_rate, 
-        description: this.state.description,
-        category_id: this.state.category_id
-        }
+      hourly_rate: this.state.hourly_rate, 
+      description: this.state.description,
+      first_name: this.state.first_name,
+      last_name:this.state.last_name
     }
     $.ajax({ 
-      url: '/services', 
-      type: 'POST', 
+      url: `/services/${this.state.id}/edit`, 
+      type: 'GET', 
       data: data,
       success: (e) => { 
         console.log('it worked!', e);
@@ -52,19 +61,19 @@ render() {
             <span className="card-title center pink-text lighten-1"><h3>Edit Profile</h3></span>
             <div className="row">
               <div className="input-field col s6">
-                <input defaultValue={this.props.current_user.first_name} id="first_name" type="text" className="validate"></input>
+                <input defaultValue={this.state.first_name} id="first_name" type="text" className="validate" onChange={this.onChangeFirstName}></input>
                 <label className="active" htmlFor="first_name">First Name</label>
               </div>
               <div className="input-field col s6">
-                <input defaultValue={this.props.current_user.last_name} id="last_name" type="text" className="validate"></input>
+                <input defaultValue={this.state.last_name} id="last_name" type="text" className="validate" onChange={this.onChangeLastName}></input>
                 <label className="active" htmlFor="last_name">Last Name</label>
               </div>
               <div className="input-field col s6">
-                <input defaultValue={this.props.service.hourly_rate} id="hourly_rate" type="text" className="validate"></input>
+                <input defaultValue={this.state.hourly_rate} id="hourly_rate" type="text" className="validate" onChange={this.onChangeHourlyRate}></input>
                 <label className="active" htmlFor="hourly_rate">Hourly Rate</label>
               </div>
               <div className="input-field col s12">
-                <textarea id="description" className="materialize-textarea validate"></textarea>            
+                <textarea defaultValue={this.state.description} id="description" className="materialize-textarea validate" onChange={this.onChangeDescription}></textarea>            
                 <label className="active" htmlFor="description">Description</label>
               </div>
             </div>
