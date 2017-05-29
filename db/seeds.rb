@@ -6,17 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+
 Message.destroy_all
 Review.destroy_all
+Category.destroy_all
 Service.destroy_all
+User.destroy_all
 
 # category table
 cat1 = Category.find_or_create_by! name: 'Painter'
 cat2 = Category.find_or_create_by! name: 'Carpenter'
 cat3 = Category.find_or_create_by! name: 'Electrician'
-cat4 = Category.find_or_create_by! name: 'AC servic'
+cat4 = Category.find_or_create_by! name: 'AC service'
 cat5 = Category.find_or_create_by! name: 'Computer Repair'
+cat6 = Category.find_or_create_by! name: 'Plumber'
+cat7 = Category.find_or_create_by! name: 'Cleaner'
+cat8 = Category.find_or_create_by! name: 'Interior Designer'
 
 # user table
 u1 = User.create!({
