@@ -2,9 +2,9 @@ class EditService extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      id:this.props.service[0].id,
-      description:this.props.service[0].description,
-      hourly_rate: this.props.service[0].hourly_rate,
+      id:this.props.service.id,
+      description:this.props.service.description,
+      hourly_rate: this.props.service.hourly_rate,
       first_name: this.props.current_user.first_name,
       last_name: this.props.current_user.last_name
     };
@@ -13,7 +13,7 @@ class EditService extends React.Component{
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeHourlyRate = this.onChangeHourlyRate.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
-    console.log("service is:", this.props.service[0]);
+    console.log("service is:", this.props.service);
   } 
   
   onChangeFirstName(event){

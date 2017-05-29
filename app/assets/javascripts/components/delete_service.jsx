@@ -2,7 +2,7 @@ class DeleteService extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id:this.props.service[0].id,
+      id:this.props.service.id,
     };
     this.delProfile = this.delProfile.bind(this);
     console.log("service is:", this.props.service[0]);

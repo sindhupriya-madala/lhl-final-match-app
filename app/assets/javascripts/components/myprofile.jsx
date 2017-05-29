@@ -2,7 +2,7 @@ class MyProfile extends React.Component{
   constructor(props) {
   super(props);
     this.state = {
-      service : this.props.service,
+      service : this.props.service[0],
       reviews : 'hello', //this.props.reviews,
       user: this.props.user,
       categories: this.props.categories,
