@@ -34,11 +34,22 @@ class ServicesController < ApplicationController
   end
 
   def edit
-
+    editService = Service.find_by(id: params[:id])
+    editService.hourly_rate = params[:hourly_rate]
+    editService.description = params[:description]
+    editService.save
+    
+    userofservice = User.find_by(id: editService.user_id)
+    userofservice.first_name = params[:first_name]
+    userofservice.last_name = params[:last_name]
+    userofservice.save
   end
 
   def destroy
-
+    p "im in delete of service controller"
+    delService = Service.find_by(id: params[:id])
+    p delService
+    delService.destroy
   end
 
   private

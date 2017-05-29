@@ -57,7 +57,7 @@ class MyProfile extends React.Component{
 
   render() {
     const editDiv = (this.state.show_edit)?<EditService current_user={this.state.current_user} service={this.state.service}/> : ''
-    const deleteDiv = (this.state.show_delete)?<DeleteService /> : ''
+    const deleteDiv = (this.state.show_delete)?<DeleteService service={this.state.service}/> : ''
     const addDiv = (this.state.show_add)?<AddService categories = {this.state.categories}/> : ''
     return(
       <div>
@@ -70,17 +70,17 @@ class MyProfile extends React.Component{
               </a>
               <ul>
                 <li>
-                  <a className="btn-floating red">
+                  <a className="btn-floating green">
                     <i className="material-icons" onClick={() => {this.editProfile();}}>mode_edit</i>
                   </a>
                 </li>
                 <li>
-                  <a className="btn-floating teal darken-4">
+                  <a className="btn-floating orange darken-3">
                     <i className="material-icons" onClick={() => {this.deleteProfile();}}>delete</i>
                   </a>
                 </li>
                 <li>
-                  <a className="btn-floating teal darken-4">
+                  <a className="btn-floating purple lighten-1">
                     <i className="material-icons" onClick={() => {this.addProfile();}}>add</i>
                   </a>
                 </li>
