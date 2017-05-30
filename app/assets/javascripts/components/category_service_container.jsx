@@ -13,7 +13,7 @@ class CategoryService extends React.Component{
     render(){
       console.log("category service controller:",this.props.services);
       return(
-        <div id='categoryService-container'> 
+        <div id='categoryService-container' className="pink lighten-5"> 
           <CategoriesTab categories={this.state.categories}/>
           <div className='row'>
             <ServiceCardList services={this.state.services} />     

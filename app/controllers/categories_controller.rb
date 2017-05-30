@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
         .where("services.category_id = #{@category.id}")
         .order('created_at DESC')
 
-    puts @services
+    p @services
   end
 
 end
