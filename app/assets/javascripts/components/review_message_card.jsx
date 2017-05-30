@@ -2,34 +2,43 @@ class ReviewMessageCard extends React.Component{
 
   constructor(props) {
     super(props);
+    this.state = {
+      user : this.props.user,
+      service : this.props.service
+    }
     this.handleReview = this.handleReview.bind(this);
     this.handleMessage =  this.handleMessage.bind(this);
   }
 
   handleReview(event) {
-    const content = this.refs.content.value;
+    const description = this.refs.content.value;
     const rating = this.refs.rating.value;
     $.ajax({ 
-      url: '/reviews', 
+      url: `/services/${this.state.service.id}/reviews`, 
       type: 'POST', 
       data: { 
-        review: {content: content, rating: rating} 
+        review: { description: description, 
+                  rating: rating, 
+                  user_id: this.state.service.user_id,
+                  service_id: this.state.service.id
+                } 
       }, 
       success: (review) => { 
-        console.log('it worked!', response);
-        this.props.newReview(review); 
+        console.log('it worked!', review);
+        // this.props.newReview(review); 
       } 
     });
   };
 
   handleMessage(event) {
     const content = this.refs.content.value;
-    const rating = this.refs.rating.value;
+    console.log("receiver user is", this.state.user);
     $.ajax({ 
-      url: '/messages/new', 
+      url: '/messages', 
       type: 'POST', 
       data: { 
-        item: {content: content } 
+        content: content,
+        receiver_user_id: this.state.user.id
       }, 
       success: (response) => { 
         console.log('it worked!', response); 

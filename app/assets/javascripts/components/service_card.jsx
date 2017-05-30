@@ -13,7 +13,7 @@ class ServiceCard extends React.Component {
 	render() {
 		return(
 			<div className="row">
-				<div className="">
+				<div className="services-column">
 					<div className="card">
 						<div className="card-image row">
 							<Img src="sample1.jpg" alt="obama" height={250} className="col s6"/>
@@ -24,7 +24,7 @@ class ServiceCard extends React.Component {
 						</div>
 						<div className="card-action row">
 							<div className="col s6 center-align">	
-								<a href="#">Average Rating</a>	
+								<a href="#">Average Rating</a>
 								<label>3.5</label>
 							</div>
 							<div className="col s6 center-align">

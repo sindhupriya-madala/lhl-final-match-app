@@ -9,11 +9,20 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service    = Service.where(user_id: params[:id])
+    @service    = Service.find_by(user_id: params[:id])
+    p @service
     @categories = Category.all
-    @reviews    = Review.where(user_id: params[:id])
+    # @reviews    = Review.where(user_id: params[:id])
+    if(@service) 
+      @reviews = Review
+              .joins("left outer join users on Reviews.user_id = users.id")
+              .select("reviews.*, users.first_name, users.last_name")
+              .where("reviews.service_id = #{@service.id}")
+              .order('created_at DESC')
+    end
     @user       = User.find(params[:id])
     @isUser     = User.isUser(params[:id].to_i, current_user.id.to_i)
+    
     @userInfo = {
       email: @user.email,
       id: @user.id,
@@ -21,6 +30,7 @@ class ServicesController < ApplicationController
       last_name: @user.last_name
     }
     p @userInfo
+
   end
 
   def create
@@ -47,9 +57,18 @@ class ServicesController < ApplicationController
 
   def destroy
     p "im in delete of service controller"
+    
     delService = Service.find_by(id: params[:id])
+    reviews = Review.where(service_id: delService.id)
+    p reviews
     p delService
+    reviews.destroy_all
     delService.destroy
+  end
+
+  def getUserByReview(id)
+    user = User.find(id)
+    return (user.first_name).concat(' ').concat(user.last_name)
   end
 
   private

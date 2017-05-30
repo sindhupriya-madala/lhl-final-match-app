@@ -1,5 +1,7 @@
 const ServiceCardList = ({services}) =>
-    <div className='services-column col s12 m8 l8'>            
+<div className="row">
+    <div className="col s12 m1 l1"></div>
+    <div className='col s12 m10 l10'>    
       {services.map( (service) => {
         return(
           <ServiceThumb 
@@ -8,3 +10,5 @@ const ServiceCardList = ({services}) =>
         )
       })}
     </div>
+    <div className="col s12 m1 l1"></div>
+</div>

@@ -13,15 +13,17 @@ class ServiceOrProfile extends React.Component{
 
   render() {
 
-    console.log(this.props.userInfo.email);
+    console.log("service in service or profile", this.props.service);
     const service = this.props.isUser ? 
       <MyProfile 
         categories={this.state.categories} 
         service={this.state.service} 
-        user={this.state.userInfo}/> 
+        user={this.state.userInfo}
+        reviews = {this.state.reviews}/> 
       : <Service 
         service={this.state.service}
         user={this.state.userInfo}
+        reviews = {this.state.reviews}
       />
     return(
       <div>

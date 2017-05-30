@@ -5,14 +5,17 @@ class CategoryService extends React.Component{
             categories: this.props.categories,
             services: this.props.services
         }
+        this.onClickCategory = this.onClickCategory.bind(this);
     }
-    
+    onClickCategory() {
+      console.log("clicked one category");
+    }
     render(){
       console.log("category service controller:",this.props.services);
       return(
         <div id='categoryService-container'> 
+          <CategoriesTab categories={this.state.categories}/>
           <div className='row'>
-            <Categories categories={this.state.categories}/>
             <ServiceCardList services={this.state.services} />     
           </div>
         </div>

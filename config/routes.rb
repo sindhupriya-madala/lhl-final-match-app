@@ -6,10 +6,8 @@ Rails.application.routes.draw do
   resources :services, only: [:show, :create, :index, :edit, :destroy] do
     resources :reviews, only: [:create, :index]
   end
-  resources :messages, only: [:index]
+  resources :messages, only: [:index, :create, :destroy]
   resources :reviews, only: [:destroy]
   resources :users, only: [:new, :create]
-  resources :messages, only: [:create, :show, :destroy]
-
   post '/services/new' => 'services#new'
 end

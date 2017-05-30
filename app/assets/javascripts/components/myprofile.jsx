@@ -2,8 +2,8 @@ class MyProfile extends React.Component{
   constructor(props) {
   super(props);
     this.state = {
-      service : this.props.service[0],
-      reviews : 'hello', //this.props.reviews,
+      service : this.props.service,
+      reviews : this.props.reviews,
       user: this.props.user,
       categories: this.props.categories,
       show_edit : false,
@@ -92,7 +92,7 @@ class MyProfile extends React.Component{
           <div className="col s12 m6">{deleteDiv}</div>
           <div className="col s12 m6">{addDiv}</div>
         </div>
-            <div className="row"><AllReviews /></div>
+            <div className="row"><ReviewsList reviews={this.state.reviews}/></div>
       </div> 
     )
     }
