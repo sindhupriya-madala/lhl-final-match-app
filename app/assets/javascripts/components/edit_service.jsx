@@ -56,7 +56,7 @@ class EditService extends React.Component{
 render() {
     return(
       <form>
-        <div className="card large purple lighten-5">
+        <div className="card  purple lighten-5">
           <div className="card-content black-text">
             <span className="card-title center pink-text lighten-1"><h3>Edit Profile</h3></span>
             <div className="row">
@@ -73,7 +73,7 @@ render() {
                 <label className="active" htmlFor="hourly_rate">Hourly Rate</label>
               </div>
               <div className="input-field col s12">
-                <textarea defaultValue={this.state.description} id="description" className="materialize-textarea validate" onChange={this.onChangeDescription}></textarea>            
+                <input defaultValue={this.state.description} id="description" className="materialize-textarea validate" onChange={this.onChangeDescription}></input>            
                 <label className="active" htmlFor="description">Description</label>
               </div>
             </div>

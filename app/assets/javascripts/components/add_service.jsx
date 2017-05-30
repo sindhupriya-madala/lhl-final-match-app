@@ -54,7 +54,7 @@ class AddService extends React.Component{
     });
     return(
       <form onSubmit={this.updateProfile}>
-        <div className="card large purple lighten-5">
+        <div className="card purple lighten-5">
           <div className="card-content black-text">
             <span className="card-title center pink-text lighten-1"><h3>Add Service</h3></span>
             <div className="row">
@@ -68,7 +68,7 @@ class AddService extends React.Component{
                 <label className="active" htmlFor="hourly_rate">Hourly Rate</label>
               </div>
               <div className="input-field col s12">
-                <textarea id="description" className="materialize-textarea validate description" onChange={this.onChangeDescription}></textarea>            
+                <input id="description" className="materialize-textarea validate description" onChange={this.onChangeDescription}></input>            
                 <label className="active" htmlFor="description">Description</label>
               </div>
             </div>
