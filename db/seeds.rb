@@ -14,43 +14,44 @@ Service.destroy_all
 User.destroy_all
 
 # category table
-cat1 = Category.find_or_create_by! name: 'Painter'
-cat2 = Category.find_or_create_by! name: 'Carpenter'
-cat3 = Category.find_or_create_by! name: 'Electrician'
-cat4 = Category.find_or_create_by! name: 'AC service'
-cat5 = Category.find_or_create_by! name: 'Computer Repair'
-cat6 = Category.find_or_create_by! name: 'Plumber'
-cat7 = Category.find_or_create_by! name: 'Cleaner'
-cat8 = Category.find_or_create_by! name: 'Interior Designer'
+cat1 = Category.find_or_create_by! name: 'AC Services'
+cat2 = Category.find_or_create_by! name: 'Carpenter' 
+cat3 = Category.find_or_create_by! name: 'Cleaner'
+cat4 = Category.find_or_create_by! name: 'Electrician'
+cat5 = Category.find_or_create_by! name: 'Interior Design'
+cat6 = Category.find_or_create_by! name: 'Painter'
+cat7 = Category.find_or_create_by! name: 'Plumber'
+cat8 = Category.find_or_create_by! name: 'Renovations'
+
 
 # user table
 u1 = User.create!({
-  first_name: 'sindhu',
-  last_name: 'manoj',
+  first_name: 'Sindhu',
+  last_name: 'Manoj',
   email: 'sindhu@test.com',
   password: '123456',
   profile_pic: 'asd'
 })
 
 u2 = User.create!({
-  first_name: 'sindhu',
-  last_name: 'priya',
+  first_name: 'Sindhu',
+  last_name: 'Priya',
   email: 'test2@test.com',
   password: '123456',
   profile_pic: 'asd'
 })
 
 u3 = User.create!({
-  first_name: 'sean',
-  last_name: 'park',
+  first_name: 'Sean',
+  last_name: 'Park',
   email: 'test3@test.com',
   password: '123456',
   profile_pic: 'asd'
 })
 
 u4 = User.create!({
-  first_name: 'alvyn',
-  last_name: 'ssss',
+  first_name: 'Alvin',
+  last_name: 'Shih',
   email: 'test4@test.com',
   password: '123456',
   profile_pic: 'asd'
@@ -68,7 +69,9 @@ u5 = User.create!({
 Message.create!({
   sender_user: u1,
   receiver_user: u2,
+
   content: ' Hi are you available next week'
+
 })
 
 Message.create!({
@@ -94,7 +97,7 @@ Message.create!({
 ser1 = Service.create!({
   user: u1,
   category: cat1,
-  description: 'service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1',
+  description: 'service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1 service 1',
   hourly_rate: 15
 })
 
@@ -107,9 +110,16 @@ ser2 = Service.create!({
 
 ser3 = Service.create!({
   user: u1,
-  category: cat1,
-  description: 'sdsflshgfufjduriughkjkjvhiufjkefheiuqwofksfndxxvodifeuo',
+  category: cat3,
+  description: 'Hi. I"m Sindhu and I am a Cleaner',
   hourly_rate: 15
+})
+
+ser4 = Service.create!({
+  user: u1,
+  category: cat4,
+  description: 'sdsflshgfufjduriughkjkjvhiufjkefheiuqwofksfndxxvodifeuo',
+  hourly_rate: 16
 })
 
 ser4 = Service.create!({

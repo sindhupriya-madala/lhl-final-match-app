@@ -1,4 +1,4 @@
- const ServiceThumb = ({service}) => {
+const ServiceThumb = ({service}) => {
   const avatar_url = service.avatar ? `user/avatar/${service.user_id}/medium_avatar.jpg` : `fallback/default-avatar.jpeg`
   const goToService = (e) => {
     e.preventDefault()

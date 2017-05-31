@@ -17,13 +17,19 @@ const About = (props) => {
       </div>
 
       <div id='gettingstarted' className='gettingstarted-container'>
-        <div className='gettingstarted-content'>
-          <h3> It's Easy! </h3>
-          <ul>
-            <li> 1. Choose a category. </li>
-            <li> 2. Pick an Expert. </li>
-            <li> 3. View details and book an appointment.</li>
-          </ul>
+        <div className="row center">
+          <div className='gettingstarted-content '>
+            <div className='col s6 right-align'>
+              <h3> It's Easy! </h3>
+            </div>
+            <div className='col s6 left-align'>
+              <ol>
+                <li> Choose a category. </li>
+                <li> Pick an Expert. </li>
+                <li> View details and book an appointment.</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -59,13 +65,13 @@ const About = (props) => {
 
       <div id='aboutus' className='aboutus-container'>
         <div className='aboutus-content'>
-          
-            This App was built using PostgreSql, Rails, AJAX, JQuery, React, Materialize, CSS, SASS
-            and Devise Authentication. <br/>
-            You can find the source code 
-            <a href="https://github.com/laughnpeas/lhl-final-match-app"> here on GitHub. </a>
-            <br/> <u>Team Members:</u> <i>Alvin Shih, Sean Park and Sindhupriya Madala.</i>
-          
+            <p>
+              This App was built using PostgreSql, Rails, AJAX, JQuery, React, Materialize, CSS, SASS
+              and Devise Authentication. <br/>
+              <u>Team Members:</u> Alvin Shih, Sean Park and Sindhupriya Madala. <br/> 
+              You can find the source code 
+              <a href="https://github.com/laughnpeas/lhl-final-match-app"> here on GitHub. </a>
+            </p>       
         </div>
       </div>
 

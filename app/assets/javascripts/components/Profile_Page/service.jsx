@@ -30,9 +30,9 @@ class Service extends React.Component{
 					<div className="col s12 m6"><ServiceCard service={this.state.service} user={this.state.user}/></div>
 					<div className="col s12 m6">
 						<ReviewMessageCard
-							 user={this.state.user} 
-							 service={this.state.service}
-							 current_user={this.state.current_user}
+							user={this.state.user} 
+							service={this.state.service}
+							current_user={this.state.current_user}
 						/>
 					</div>
 				</div>

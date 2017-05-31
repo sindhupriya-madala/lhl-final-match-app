@@ -12,29 +12,39 @@
     border-width: .05em;
   }
   .gettingstarted-container {
-    height: 27vh;
+    min-height: 27vh;
+    overflow-y: hidden;
     .gettingstarted-content{
-    display:block;  
-    position: absolute;
-    width: 100vw;
-    text-align: center;
-    list-style-type: circle;
-    ul {
-      padding-top: 1em;
-    }
+      padding-top: 3em;
+      // display:block;  
+      // position: absolute;
+      width: 100vw;
+      text-align: center;
+      list-style-type: circle;
+      h3 {
+        padding-right: 1em;
+      }
+      ul {
+        padding-top: 1em;
+      }
     }
   }
   .benefits-container {
     color: $blue;
+    padding-top: 3em;
     // height: 27vh;
   }
   .aboutus-container {
-    height: 27vh;
+    padding-top: 1.5em;
+    min-height: 30vh;
+    overflow: scroll;
     .aboutus-content {
-      position: absolute;
       color: $blue;
-      padding: 1em 20em;
+      padding: 0em 20em;
       text-align: center;
+      p {
+        display: inline-block;
+      }
     }
   }
 

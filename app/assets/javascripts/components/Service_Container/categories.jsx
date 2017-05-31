@@ -4,24 +4,10 @@ class Categories extends React.Component{
     this.state = {
       categories: this.props.categories
     }
-    // this.openCategory = this.openCategory.bind(this);
   };
-
-  // openCategory(event){
-  //   var id = event.target.id;
-  //   console.log("selected value is:",id);
-  //   $.ajax({ 
-  //     url: `categories/${id}`, 
-  //     type: 'GET', 
-  //     success: (review) => { 
-  //       // console.log('it worked!', review);
-  //     } 
-  //   });
-  // }
 
   render() {
     const categories = this.props.categories.map((category) => {
-      console.log(category.id);
       return(
           <div className='card' key={category.id} >
             <div className='card-content white-text'>
