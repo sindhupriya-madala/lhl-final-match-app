@@ -5,12 +5,19 @@ class Messages extends React.Component{
     console.log("messages :", this.props.messages);
     this.state = {
       messages: this.props.messages,
-      reply: false
+      reply: false,
+      content: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.sendReply = this.sendReply.bind(this);
     this.deleteMessage = this.deleteMessage.bind(this);
+    this.handleMessage = this.handleMessage.bind(this);
   };
+
+  handleMessage(event) {
+    this.setState({content: event.target.value});
+    console.log('=================',event.target.value);
+  }
 
   handleChange() {
     this.setState({
@@ -28,7 +35,7 @@ class Messages extends React.Component{
       url: '/messages', 
       type: 'POST', 
       data: { 
-        content: content,
+        content: this.state.content,
         receiver_user_id: event.target.id
       }, 
       success: (response) => { 
@@ -58,7 +65,7 @@ class Messages extends React.Component{
       const replymsg = this.state.reply 
       ? <div>
           <div className="input-field col s12">
-            <textarea id="textarea1" className="materialize-textarea" ref='content'></textarea>            
+            <textarea id="textarea1" className="materialize-textarea" ref='content' onChange={this.handleMessage}></textarea>            
           </div>  
           <a className="btn-floating btn waves-effect waves-light blue right" onClick={this.sendReply}>
             <i className="material-icons" id={message.sender_user_id}>send</i>
@@ -68,7 +75,7 @@ class Messages extends React.Component{
       return(
         <li key={message.id}>
           <div className="collapsible-header brown lighten-5"> 
-            <span className={ (today == date)? "new badge": "badge"}>{message.id}</span>
+            <span className={ (today == date)? "new badge": "badge"}></span>
             <i className="material-icons">place</i>
             {message.first_name} {message.last_name}
           </div>

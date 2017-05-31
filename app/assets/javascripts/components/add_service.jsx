@@ -40,8 +40,9 @@ class AddService extends React.Component{
       url: '/services', 
       type: 'POST', 
       data: data,
-      success: (e) => { 
-        console.log('it worked!', e);
+      success: (data) => { 
+        console.log(data);
+        this.props.changeService(data);
       } 
     });
   }
@@ -60,6 +61,7 @@ class AddService extends React.Component{
             <div className="row">
               <div className="input-field col s6 center">
                 <select value={this.state.category_id} className="browser-default category" onChange={this.handleChange}>
+                  <option>Select a Category</option>
                   {categories}
                 </select>       
               </div>

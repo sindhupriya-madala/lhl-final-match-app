@@ -26,7 +26,7 @@ class Service extends React.Component{
     return(
 			<div>
 				<div className="row">
-					<div className="col s12"><h1 className="orange-text"> Social Worker </h1></div>
+					<div className="col s12"><h2 className="orange-text center"> <i>Profile Details</i> </h2></div>
 					<div className="col s12 m6"><ServiceCard service={this.state.service} user={this.state.user}/></div>
 					<div className="col s12 m6">
 						<ReviewMessageCard

@@ -11,10 +11,21 @@ class MyProfile extends React.Component{
       show_add : false
     }
     this.updatedProfile = this.updatedProfile.bind(this);
+    this.changeService = this.changeService.bind(this);
+    this.deleteService = this.deleteService.bind(this);
     console.log("user is :", this.state.user);
     console.log("services is:", this.state.service);
   };
   
+  changeService(service) {
+    console.log("Refreshing...............",service);
+    this.setState({service: service});
+  }
+
+  deleteService(service) {
+    console.log("Refreshing...............",service);
+    this.setState({service: service});
+  }
   addProfile() {
     if(this.show_delete != 'false' ) {
       this.setState({show_delete: false})
@@ -61,14 +72,14 @@ class MyProfile extends React.Component{
   };
 
   render() {
-    const editDiv = (this.state.show_edit)?<EditService current_user={this.state.user} service={this.state.service}/> : ''
-    const deleteDiv = (this.state.show_delete)?<DeleteService service={this.state.service} updatedProfile={this.updatedProfile}/> : ''
-    const addDiv = (this.state.show_add)?<AddService categories = {this.state.categories}/> : ''
+    const editDiv = (this.state.show_edit)?<EditService current_user={this.state.user} service={this.state.service} changeService={this.changeService}/> : ''
+    const deleteDiv = (this.state.show_delete)?<DeleteService service={this.state.service} changeService={this.changeService} deleteService={this.deleteService}/> : ''
+    const addDiv = (this.state.show_add)?<AddService categories = {this.state.categories} changeService={this.changeService}/> : ''
     return(
       <div>
         <div className="row">
           <div className="col s12">
-            <h2 className="orange-text center"> Social Worker </h2>
+            <h2 className="orange-text center"><i> My Profile</i></h2>
             <div className="fixed-action-btn horizontal">
               <a className="btn-floating btn-large red">
                 <i className="large material-icons">menu</i>

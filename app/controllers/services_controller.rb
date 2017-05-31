@@ -22,14 +22,14 @@ class ServicesController < ApplicationController
     end
     @user       = User.find(params[:id])
     @isUser     = User.isUser(params[:id].to_i, current_user.id.to_i)
-    
+    puts @user.avatar
     @userInfo = {
       email: @user.email,
       id: @user.id,
       first_name: @user.first_name,
-      last_name: @user.last_name
+      last_name: @user.last_name,
+      avatar: @user.avatar.to_s
     }
-    p @userInfo
 
   end
 
@@ -40,6 +40,9 @@ class ServicesController < ApplicationController
 
     if @service.save
       puts "saved!!!"
+      respond_to do |format|
+        format.json  { render :json => @service } 
+      end
     end
   end
 
@@ -47,12 +50,18 @@ class ServicesController < ApplicationController
     editService = Service.find_by(id: params[:id])
     editService.hourly_rate = params[:hourly_rate]
     editService.description = params[:description]
-    editService.save
+    if editService.save
     
-    userofservice = User.find_by(id: editService.user_id)
-    userofservice.first_name = params[:first_name]
-    userofservice.last_name = params[:last_name]
-    userofservice.save
+      userofservice = User.find_by(id: editService.user_id)
+      userofservice.first_name = params[:first_name]
+      userofservice.last_name = params[:last_name]
+      if userofservice.save
+        service = Service.find_by(id: params[:id])
+        respond_to do |format|
+            format.json  { render :json => service } 
+        end
+      end
+    end
   end
 
   def destroy

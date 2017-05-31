@@ -15,6 +15,7 @@ class DeleteService extends React.Component {
       type: 'DELETE', 
       success: (data) => { 
         console.log('it worked!', data);
+        this.props.deleteService(null);
       } 
     });
   };

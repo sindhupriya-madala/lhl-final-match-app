@@ -47,8 +47,9 @@ class EditService extends React.Component{
       url: `/services/${this.state.id}/edit`, 
       type: 'GET', 
       data: data,
-      success: (e) => { 
-        console.log('it worked!', e);
+      success: (data) => { 
+        console.log('updating.....................',data);
+        this.props.changeService(data);
       } 
     });
   }

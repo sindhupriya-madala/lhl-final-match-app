@@ -2,7 +2,7 @@
 class ServiceCard extends React.Component {
 	constructor(props) {
 		super(props);
-		const avatar_url = `user/avatar/${this.props.user.user_id}/${this.props.user.avatar}` 
+		const avatar_url = `user/avatar/${this.props.user.id}/avatar.jpg` 
 		this.state = {
 			service : this.props.service,
 			user : this.props.user,
