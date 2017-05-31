@@ -4,20 +4,20 @@ class Categories extends React.Component{
     this.state = {
       categories: this.props.categories
     }
-    this.openCategory = this.openCategory.bind(this);
+    // this.openCategory = this.openCategory.bind(this);
   };
 
-  openCategory(event){
-    var id = event.target.id;
-    console.log("selected value is:",id);
-    $.ajax({ 
-      url: `categories/${id}`, 
-      type: 'GET', 
-      success: (review) => { 
-        // console.log('it worked!', review);
-      } 
-    });
-  }
+  // openCategory(event){
+  //   var id = event.target.id;
+  //   console.log("selected value is:",id);
+  //   $.ajax({ 
+  //     url: `categories/${id}`, 
+  //     type: 'GET', 
+  //     success: (review) => { 
+  //       // console.log('it worked!', review);
+  //     } 
+  //   });
+  // }
 
   render() {
     const categories = this.props.categories.map((category) => {
@@ -25,7 +25,7 @@ class Categories extends React.Component{
       return(
           <div className='card' key={category.id} >
             <div className='card-content white-text'>
-              <span className='card-title center-align' id={category.id} onClick={this.openCategory}> {category.name} </span>
+              <span className='card-title center-align' id={category.id} onClick = { event => this.props.onClickCategory(category.id)}> {category.name} </span>
             </div>
           </div>
       )

@@ -4,23 +4,39 @@
     e.preventDefault()
     location.href = `/services/${service.user_id}`
   } 
-  console.log("service in service thumb is :", service);
+
   return(
-    <div className="col s12 m4 l4">
-      <div className="card horizontal teal accent-1">
-        <div className="card-image">
-          <Img src="sample1.jpg" />
-          <h6 className="pink-text accent-1">{service.first_name} {service.last_name}  </h6>
+    <div className='services-column col l3'>
+      <div className='card horizontal sticky-action hoverable'>
+        <div className='card-image'>
+          <Img className='card' src='sample1.jpg'/>
+            <div className='card-button-container'>
+                <div className='card-action'>
+                <button className="btn waves-effect waves-light" type="submit" name="action" onClick={goToService}>Details
+                    <i className="material-icons right">send</i>
+                </button>
+                </div>
+            </div>
         </div>
-        <div className="card-stacked">
-          <div className="card-content">
-            <p className="blue-text">Hourly Rate : {service.hourly_rate}</p>
-          </div>
-          <div className="card-content blue-text">
-            <p>Rating : 3.5</p>
-          </div>
-          <div className="card-action">
-            <a href="#" onClick={goToService}>details</a>
+        <div className='card-stacked'>
+          <div className='card-content black-text'>
+            <p className='card-title'> {service.first_name} {service.last_name} </p>
+            {/*<div className='card-rating'>*/}
+              {/*<input className="star star-5" id="star-5" type="radio" name="star"/>
+              <i className="material-icons">star</i>
+              <input className="star star-4" id="star-4" type="radio" name="star"/>
+              <i className="material-icons">star</i>
+              <input className="star star-3" id="star-3" type="radio" name="star"/>
+              <i className="material-icons">star</i>
+              <input className="star star-2" id="star-2" type="radio" name="star"/>
+              <i className="material-icons">star</i>
+              <input className="star star-1" id="star-1" type="radio" name="star"/>
+              <i className="material-icons">star</i>*/}
+            {/*</div>*/} 
+              <div className="card-content">
+                <p>Rating : 3.5</p>
+                <p> Hourly Rate: ${service.hourly_rate}</p>
+              </div>
           </div>
         </div>
       </div>

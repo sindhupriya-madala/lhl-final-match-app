@@ -1,7 +1,3 @@
-// Place all the styles related to the services controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 
 @import 'partials/variables';
 
@@ -23,27 +19,26 @@
       img {
         margin: 0;
         min-height: 8em;
+        min-width: 8em;
+
         .card-button-container {
+          padding:0;
+            position:absolute;
             width: 100%;
 
           .card-action {
-            padding: 0;
+            padding: 0em;
             position: absolute;
           }
-
         }
       }
-      .card-button-container {
-        position: absolute;
-        // background-color: $yellow;
-      }
-
     }
     .card-stacked {
       
 
       .card-content {
         padding: .6em;
+        max-height: 1em;
 
         .card-title {
           color: $black;
@@ -63,8 +58,14 @@
         }
 
         .card-details {
+          display: block;
           color: $black;
           font-size: .8em;
+          // height: 20vh;
+          // width: 18vh;
+          // overflow-x: scroll;
+          // overflow-y: scroll; 
+          
         }
 
       }
@@ -87,6 +88,5 @@
     }
 
 
+    }
   }
-
-}

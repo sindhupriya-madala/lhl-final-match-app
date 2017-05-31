@@ -14,6 +14,7 @@
   .gettingstarted-container {
     height: 27vh;
     .gettingstarted-content{
+    display:block;  
     position: absolute;
     width: 100vw;
     text-align: center;
@@ -25,13 +26,14 @@
   }
   .benefits-container {
     color: $blue;
-    height: 27vh;
+    // height: 27vh;
   }
   .aboutus-container {
     height: 27vh;
     .aboutus-content {
       position: absolute;
-      padding: 0 5em 0 5em;
+      color: $blue;
+      padding: 1em 20em;
       text-align: center;
     }
   }
