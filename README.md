@@ -116,3 +116,9 @@ brew services start postgresql
 brew services stop postgresql
 
 ```
+### if mini-magick error occured
+
+```
+brew uninstall imagemagick
+brew install imagemagick
+```
