@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,30 +8,15 @@ class User < ApplicationRecord
   has_many :received_messages, class_name: "Message", foreign_key: "receiver_user_id"
   has_many :messages, class_name: "Message", foreign_key: "receiver_user_id"
   
-  # mount_uploader :profile_pic, UserImageUploader
+  # User Avatar Validation
+  validates_integrity_of :avatar
+  validates_processing_of :avatar
 
-  #   # User profile_pic Validation
-  # validates_integrity_of  :profile_pic
-  # validates_processing_of :profile_pic
- 
-  # private
-  #   def profile_pic_size_validation
-  #     errors[:profile_pic] << "should be less than 500KB" if profile_pic.size > 0.1.megabytes
-  #   end
-  # has_secure_password
-  #   has_many :reviews
-  #   validates :password, length: { minimum: 3 }, allow_nil: true
-  #   validates :first_name, presence: true
-  #   validates :last_name, presence: true
-  #   validates :profile_pic, presence: true
-  #   validates :email, uniqueness: true, presence: true
+  private
+    def avatar_size_validation
+      error[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
+    end
 
-  #   def self.authenticate_with_credentials(email, password)
-  #     user = User.find_by_email(email.strip.downcase)
-  #     if user && user.authenticate(password)
-  #       user
-  #     end  
-  #   end
   def self.isUser(service_user_id, current_user_id)
     return (service_user_id === current_user_id)
   end

@@ -29,12 +29,16 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field input-field col s3">
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </div>
+  <br/>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "btn waves-effect waves-light" %>
   </div>
 
 <% end %>
 
 </div>
 
-<%= render "devise/shared/links" %>
