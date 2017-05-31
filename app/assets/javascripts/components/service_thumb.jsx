@@ -1,5 +1,5 @@
  const ServiceThumb = ({service}) => {
-
+  const avatar_url = service.avatar ? `user/avatar/${service.user_id}/${service.avatar}` : `fallback/default-avatar.jpeg`
   const goToService = (e) => {
     e.preventDefault()
     location.href = `/services/${service.user_id}`
@@ -9,7 +9,7 @@
     <div className='services-column col l3'>
       <div className='card horizontal sticky-action hoverable'>
         <div className='card-image'>
-          <Img className='card' src='sample1.jpg'/>
+          <Img className='card' src={avatar_url}/>
             <div className='card-button-container'>
                 <div className='card-action'>
                 <button className="btn waves-effect waves-light" type="submit" name="action" onClick={goToService}>Details
