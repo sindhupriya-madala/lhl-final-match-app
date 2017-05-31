@@ -14,6 +14,9 @@ class CategoriesController < ApplicationController
         .order('created_at DESC')
 
     p @services
+    respond_to do |format|
+      format.json  { render :json => @services } # don't do msg.to_json
+    end
   end
 
 end

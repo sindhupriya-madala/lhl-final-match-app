@@ -4,7 +4,8 @@ class ReviewMessageCard extends React.Component{
     super(props);
     this.state = {
       user : this.props.user,
-      service : this.props.service
+      service : this.props.service,
+      current_user : this.props.current_user
     }
     this.handleReview = this.handleReview.bind(this);
     this.handleMessage =  this.handleMessage.bind(this);

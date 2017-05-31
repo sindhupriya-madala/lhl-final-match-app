@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
     p @review
     if @review.save
       puts saved
@@ -21,7 +22,7 @@ class ReviewsController < ApplicationController
   private
   
   def review_params
-    params.require(:review).permit(:service_id, :description, :rating, :user_id)
+    params.require(:review).permit(:service_id, :description, :rating)
   end
 
 end

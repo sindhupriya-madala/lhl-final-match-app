@@ -40,7 +40,12 @@ class MyProfile extends React.Component{
   };
 
   updatedProfile(data) {
-    this.setState({service : data.service, user : data.user})
+    if(data.service) {
+      this.setState({service : data.service})
+    } 
+    if(data.user) {
+      this.setState({user : data.user})
+    }
   };
 
   deleteProfile() {
@@ -57,7 +62,7 @@ class MyProfile extends React.Component{
 
   render() {
     const editDiv = (this.state.show_edit)?<EditService current_user={this.state.user} service={this.state.service}/> : ''
-    const deleteDiv = (this.state.show_delete)?<DeleteService service={this.state.service}/> : ''
+    const deleteDiv = (this.state.show_delete)?<DeleteService service={this.state.service} updatedProfile={this.updatedProfile}/> : ''
     const addDiv = (this.state.show_add)?<AddService categories = {this.state.categories}/> : ''
     return(
       <div>

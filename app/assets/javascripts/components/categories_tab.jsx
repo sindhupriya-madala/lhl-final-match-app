@@ -4,20 +4,8 @@ class CategoriesTab extends React.Component {
     this.state = {
      categories : this.props.categories
     }
-    this.selectCategory = this.selectCategory.bind(this);
   }
 
-  selectCategory(e) {
-    console.log("selected category", e.target.id);
-    $.ajax({ 
-      url: `/categories/${e.target.id}`, 
-      type: 'GET', 
-      success: (review) => { 
-        console.log('it worked!', review);
-        // this.props.newReview(review); 
-      } 
-    });
-  }
   render() {
     return (
       <div className="row">
@@ -25,7 +13,7 @@ class CategoriesTab extends React.Component {
         <div className="col s12 m10 l10">
             <ul className="tabs">
               {this.state.categories.map( (category) => {      
-                return(<li className="tab col s3" key = {category.id} ><a href="" id={category.id} onClick = {this.selectCategory}>{category.name}</a></li> )
+                return(<li className="tab col s3 " key = {category.id} ><a href="" id={category.id} onClick = { event => this.props.onClickCategory(category.id)}>{category.name}</a></li> )
               })}
             </ul>
         </div>
