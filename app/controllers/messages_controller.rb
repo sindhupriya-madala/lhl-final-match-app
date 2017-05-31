@@ -31,6 +31,10 @@ def index
   end
 
   def destroy
-
+    p "im in delete of message controller"
+    
+    delMessage = Message.find_by(id: params[:id])
+    p delMessage
+    delMessage.destroy
   end
 end
