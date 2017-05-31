@@ -25,9 +25,9 @@ cat8 = Category.find_or_create_by! name: 'Interior Designer'
 
 # user table
 u1 = User.create!({
-  first_name: 'ahmed',
-  last_name: 'adil',
-  email: 'test@test.com',
+  first_name: 'sindhu',
+  last_name: 'manoj',
+  email: 'sindhu@test.com',
   password: '123456',
   profile_pic: 'asd'
 })
@@ -56,11 +56,19 @@ u4 = User.create!({
   profile_pic: 'asd'
 })
 
+u5 = User.create!({
+  first_name: 'charls',
+  last_name: 'bob',
+  email: 'charls.bob@gmail.com.com',
+  password: '123456',
+  profile_pic: 'computer1.jpg'
+})
+
 # message table
 Message.create!({
   sender_user: u1,
   receiver_user: u2,
-  content: ' message from user1 to user2 message from user1 to user2 message from user1 to user2 message from user1 to user2 message from user1 to user2'
+  content: ' Hi are you available next week'
 })
 
 Message.create!({

@@ -21,7 +21,7 @@ class Messages extends React.Component{
 
   sendReply(event) {
     const content = this.refs.content.value;
-    console.log("refs is:", this.refs);
+    console.log("refs is:", this.refs.content);
     console.log("content is:", content);
     console.log("receiver user is", event.target.id);
     $.ajax({ 
@@ -37,8 +37,15 @@ class Messages extends React.Component{
     });
   };
 
-  deleteMessage() {
-
+  deleteMessage(event) {
+    console.log("message id is : ", event.target.id)
+    $.ajax({ 
+      url: `/messages/${event.target.id}`, 
+      type: 'DELETE', 
+      success: (data) => { 
+        console.log('it worked!', data);
+      } 
+    });
   }
 
   render() {
@@ -59,7 +66,7 @@ class Messages extends React.Component{
         </div>
       : '';      
       return(
-        <li>
+        <li key={message.id}>
           <div className="collapsible-header brown lighten-5"> 
             <span className={ (today == date)? "new badge": "badge"}>{message.id}</span>
             <i className="material-icons">place</i>
@@ -69,10 +76,8 @@ class Messages extends React.Component{
             <p className="col s12">{message.content}</p> 
             <p className="col s10">{date}</p>
             <a className="btn-floating btn waves-effect waves-light orange left" onClick={this.handleChange}><i className="material-icons">replay</i></a>
-            <a className="btn-floating btn waves-effect waves-light red right" onClick={this.deleteMessage}><i className="material-icons">delete</i></a>
-            <form>
+            <a className="btn-floating btn waves-effect waves-light red right" onClick={this.deleteMessage}><i id={message.id} className="material-icons">delete</i></a>
               { replymsg }
-            </form>
           </div>          
         </li>  
       )
