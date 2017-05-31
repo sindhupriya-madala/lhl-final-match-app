@@ -15,18 +15,16 @@ class AddService extends React.Component{
 
   handleChange(event) {
     this.setState({category_id: event.target.value});
-    console.log('=================',event.target.value);
   }
 
   onChangeDescription(event){
     this.setState({description: event.target.value});
-    console.log('=================',event.target.value);
   }
 
   onChangeHourlyRate(event){
     this.setState({hourly_rate: event.target.value});
-    console.log('=================',event.target.value);
   }
+  
   updateProfile(){
     event.preventDefault();
     var data = { 

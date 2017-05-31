@@ -1,4 +1,3 @@
-// import logo from './sample1.jpg'
 class ServiceCard extends React.Component {
 	constructor(props) {
 		super(props);

@@ -5,10 +5,11 @@
 @import 'partials/variables';
 
 #category-container {
-	min-height: 100vh;
+	height: 100vh;
 	padding: 0em;
 	background-color: $lightblue;
 	border-width: 2em;
+	overflow-y: scroll;
 	
 	.card {
 		padding: 1em;

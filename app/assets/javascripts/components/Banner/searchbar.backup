@@ -1,0 +1,19 @@
+class SearchBar extends React.Component{  
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ''
+    }
+  }
+
+  render() {
+    return(
+      <div>
+  		<h2 className="searchbar-container">
+        <input className='searchbar' placeholder='enter search here'/>
+      </h2>
+        <a className="btn waves-effect" onClick = { event => this.props.onClickSearch(value) }> Search </a>
+        </div>
+    )
+  }
+}

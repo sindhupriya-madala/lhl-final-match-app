@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :messages, only: [:index, :create, :destroy]
   resources :reviews, only: [:destroy]
   resources :users, only: [:new, :create]
+  resources :searchbar, only: [:index]
   post '/services/new' => 'services#new'
 end
