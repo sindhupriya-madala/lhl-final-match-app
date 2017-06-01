@@ -6,7 +6,11 @@ class SearchbarController < ApplicationController
     p params[:search]
     # res = search(params[:search])
     # p res
-    @cat = Category.find_by(name: params[:search])
+    search = params[:search]
+    @cat = Category
+        .where(" (categories.name) LIKE ?", "%#{search}%").first
+
+    # @cat = Category.find_by(name: params[:search])
     puts 'cat is'
     p @cat
     @services = Service

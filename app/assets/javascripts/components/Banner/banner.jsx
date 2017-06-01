@@ -3,31 +3,39 @@ class Banner extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			search : 'Painter'
+			search : ''
 		}
-		this.changeSearch = this.changeSearch.bind(this);
+		this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 	};
 
 	componentDidMount() {
+		event.preventDefault();
 		$('.carousel.carousel-slider').carousel({fullWidth: true});
-
 		setInterval(function(){
 			$('.carousel').carousel('next');
 		}, 5000);
 
-	};
+		// auto focus search bar
+		this.nameInput.focus();
 
-	changeSearch(e) {
-		console.log("in change search", e.target.value);
-		this.setState({search : e.target.value});
-	};
+		// click on carousel to focus search bar
+		$( "#banner-container" ).click(function() {
+			$( ".searchbar" ).focus();
+		});
+
+	}
+
+		handleSearchSubmit(e) {
+			this.setState({search : e.target.value});
+				if(e.keyCode == 13){
+				this.props.onClickSearch(this.state.search);
+			};
+		}
 
 	
   render() {
 		return(
 		<div id='banner-container' className='banner'>		
-							<input className='searchbar' type='text' placeholder='enter search here' value={this.state.search} onChange={this.changeSearch.bind(this)}/>
-							<button className="btn waves-effect" onClick = { event => this.props.onClickSearch(this.state.search) }> Search </button>
 		  <div className="carousel carousel-slider center" data-indicators="true">
 			<div className='banner-overlay'>
 				<a className="carousel-item">
@@ -49,15 +57,26 @@ class Banner extends React.Component{
 				</div>
 					<div className="carousel-fixed-item center">
 						<div className='banner-content'>
-							<h1> Expert </h1>
+							<h1> BluCollar </h1>
 							<p> Your one stop solution for Reliable Home Services </p>
 						</div>
 						<h2 className="searchbar-container">
+							<input 
+								className='searchbar' type='text' 
+								ref={(input) => {this.nameInput = input;}} 
+								placeholder='enter search here' 
+								value={this.state.search} 
+								onChange={this.handleSearchSubmit}
+								onKeyUp = {this.handleSearchSubmit}
+								/>
+							<button 
+								className="btn waves-effect" 
+								onClick = { event => this.props.onClickSearch(this.state.search) }> 
+								Search 
+							</button>
 						</h2>
 							
 					</div>
-
-					{/*event => this.props.onClickSearch(value)*/}
 
   		</div>
 		</div>
