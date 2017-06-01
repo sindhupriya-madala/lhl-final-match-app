@@ -10,6 +10,8 @@ class Service extends React.Component{
     this.newReview =  this.newReview.bind(this);
 		console.log("service details  fron service is",this.state.service);
 		console.log("user details is :",this.props.user);
+		console.log("reviews are :", this.state.reviews);
+		console.log("average rating from service card is:", this.state.reviews.average_rating);
 		console.log("current_user details is :",this.props.current_user);
 
   };
@@ -27,7 +29,7 @@ class Service extends React.Component{
 			<div>
 				<div className="row">
 					<div className="col s12"><h2 className="orange-text center"> <i>Profile Details</i> </h2></div>
-					<div className="col s12 m6"><ServiceCard service={this.state.service} user={this.state.user}/></div>
+					<div className="col s12 m6"><ServiceCard service={this.state.service} user={this.state.user} average_rating={this.state.reviews.average_rating}/></div>
 					<div className="col s12 m6">
 						<ReviewMessageCard
 							user={this.state.user} 

@@ -34,8 +34,12 @@ const ServiceThumb = ({service}) => {
               <i className="material-icons">star</i>*/}
             {/*</div>*/} 
               <div className="card-content">
-                <p>Rating : 3.5</p>
-                <p> Hourly Rate: ${service.hourly_rate}</p>
+                <p>Rating: 
+                  {service.average_rating && <span>{"  " + service.average_rating}</span> || <span>{"  " +0}</span>}
+								</p>
+                <p>Hourly Rate: 
+                  {service.hourly_rate && <span>{"  " + service.hourly_rate}</span> || <span>{"  " +0}</span>}
+								</p>
               </div>
           </div>
         </div>

@@ -9,17 +9,28 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service    = Service.find_by(user_id: params[:id])
+    @ser    = Service.find_by(user_id: params[:id])
+    @id = params[:id]
+    @service = Service
+        .joins("left outer join categories on categories.id = services.category_id")
+        .joins("left outer join reviews on services.id = reviews.service_id")
+        .select("services.*, categories.name, avg(reviews.rating) AS average_rating")
+        .where("services.user_id=#{@ser.user_id}")
+        .group("categories.name, services.id")
+    
     p @service
+    @service = @service.first
     @categories = Category.all
     # @reviews    = Review.where(user_id: params[:id])
     if(@service) 
       @reviews = Review
               .joins("left outer join users on Reviews.user_id = users.id")
-              .select("reviews.*, users.first_name, users.last_name")
-              .where("reviews.service_id = #{@service.id}")
+              .select("reviews.*, users.first_name, users.last_name, avg(reviews.rating) AS average_rating ")
+              .where("reviews.service_id = #{@ser.id}")
+              .group("reviews.id, users.first_name, users.last_name")
               .order('created_at DESC')
     end
+    p @reviews
     @user       = User.find(params[:id])
     @isUser     = User.isUser(params[:id].to_i, current_user.id.to_i)
     puts @user.avatar

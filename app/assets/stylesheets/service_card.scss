@@ -1,0 +1,44 @@
+@import 'partials/variables';
+
+.services-column {
+  
+  .card-container{
+      .card{
+        min-height: 30vh;
+        background-color: $lightblue;
+        .card-image{
+          padding: 1em;
+
+          .profile-pic{
+
+          }
+          .name{
+            color: $blue;
+          }
+          .category-name{
+            color: $blue;
+            span {
+             font-weight: bold;
+            }
+          }
+          .average-rating{
+            color: $blue;
+            span {
+             font-weight: bold;
+            }
+          }
+          .hourly-rate{        
+            color: $blue;
+              span {
+              font-weight: bold;
+              }
+          } 
+        }
+      .card-stacked{
+        .card-content{
+          padding: 0em 1em;
+        }
+      }
+    }
+  }
+}

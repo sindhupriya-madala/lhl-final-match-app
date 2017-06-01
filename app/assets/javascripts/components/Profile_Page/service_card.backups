@@ -1,0 +1,39 @@
+class ServiceCard extends React.Component {
+	constructor(props) {
+		super(props);
+		const avatar_url = `user/avatar/${this.props.user.id}/avatar.jpg` 
+		this.state = {
+			service : this.props.service,
+			user : this.props.user,
+			average_rating : this.props.average_rating,
+			avatar_url: this.props.user.avatar ? avatar_url : `fallback/default-avatar.jpeg`
+		}
+		console.log("props is:", this.props);
+		console.log("average rating from service card is:", this.state.average_rating);
+		console.log("user in service card is:", this.state.user);
+		console.log("service details from service card is :", this.props.service);
+	}
+	render() {
+		return(
+ <div className="col s12 m7">
+    <h2 className="header">Horizontal Card</h2>
+    <div className="card horizontal">
+      <div className="card-image">
+        <img src="http://lorempixel.com/100/190/nature/6">
+      </div>
+      <div className="card-stacked">
+        <div className="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+        <div className="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+          
+          
+			
+		)
+	}
+}
