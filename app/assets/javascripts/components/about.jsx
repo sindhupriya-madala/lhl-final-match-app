@@ -26,7 +26,7 @@ const About = (props) => {
               <ol>
                 <li> Choose a category. </li>
                 <li> Pick an Expert. </li>
-                <li> View details and book an appointment.</li>
+                <li> View details and send a message to book an appointment.</li>
               </ol>
             </div>
           </div>
@@ -64,14 +64,28 @@ const About = (props) => {
       </div>
 
       <div id='aboutus' className='aboutus-container'>
-        <div className='aboutus-content'>
-            <p>
-              This App was built using PostgreSql, Rails, AJAX, JQuery, React, Materialize, CSS, SASS
-              and Devise Authentication. <br/>
-              <u>Team Members:</u> Alvin Shih, Sean Park and Sindhupriya Madala. <br/> 
-              You can find the source code 
-              <a href="https://github.com/laughnpeas/lhl-final-match-app"> here on GitHub. </a>
-            </p>       
+        <div className='row center'>
+            <div className="col s4">
+              <div className='about-1'>
+                <p className='about-title'><strong><u>Team Members</u></strong></p>
+                <p className='about-content'>Alvin Shih <br/> Sean Park <br/> Sindhu Priya <br/> </p>
+              </div>
+            </div>
+
+            <div className="col s4">
+              <div className='about-2'>
+                <p className='about-title'><strong><u>Tech Stack</u></strong></p>
+                <p className='about-content'> PSQL, Rails<br/> Ajax, JQuery <br/> React, Devise <br/> Materialize CSS, Sass </p>
+              </div>
+            </div>
+
+            <div className="col s4">
+              <div className='about-3'>
+                <p className='about-title'><strong><u>Source Code</u></strong></p>
+                <p className='about-content'><a href="https://github.com/laughnpeas/lhl-final-match-app"> GitHub </a> </p>
+              </div>
+            </div>
+              
         </div>
       </div>
 

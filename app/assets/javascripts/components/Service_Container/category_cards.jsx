@@ -1,4 +1,4 @@
-class CategoryService extends React.Component{
+class CategoryCards extends React.Component{
 
     render(){
       console.log("category service controller:",this.props.services);
