@@ -124,3 +124,28 @@ brew install imagemagick
 ```
 
 ### Project looks like.
+* When you visit home page you can able to see this UI.
+![Home](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/home.png)
+![Home](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/home2.png)
+
+* You can able to find service providers by typing in search bar or selecting in category list in left side.
+
+![search category](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/search.png)
+![search category](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/search2.png)
+
+* If you want to see some one's profile you need to register/login if you click on particular card from home page it redirects to login.
+![registration](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/signup.png)
+![login](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/login.png)
+
+* you cna see individual service providers page contains reviews/ratings and also you can give ratings to them and send message if you want to have work with them.
+![send_review](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/review.png)
+![send_message](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/send%20message.png)
+
+* As a service provider you can goto your profile and add profile/ edit profile/ delete profile.
+![myprofile_add](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/myservice_add.png)
+![edit_myprofile](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/edit_service.png)
+
+* You can see your messages and send reply message as well.
+![my_messages](https://github.com/sindhupriya-madala/lhl-final-match-app/blob/master/blucoller%20screenshots/my_messages.png)
+
+
