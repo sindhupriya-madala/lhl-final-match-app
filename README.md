@@ -122,3 +122,5 @@ brew services stop postgresql
 brew uninstall imagemagick
 brew install imagemagick
 ```
+
+### Project looks like.
